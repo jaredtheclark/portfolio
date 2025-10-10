@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { ArrowRight, TrendingUp, DollarSign, Users, Clock } from "lucide-react"
 
@@ -33,14 +32,12 @@ export default function CaseStudiesPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <CardTitle className="text-xl mb-2">
-                      Transforming Auto Finance: A Unified Payments Platform
+                      Doubling autopay enrollment while simplifying payments for 100K users
                     </CardTitle>
                     <CardDescription>
-                      Led cross-functional team through complex technical transformation, replacing 3+ legacy systems
-                      with unified platform serving 100,000+ customers.
+                      Doubled autopay adoption and replaced 3 fragmented systems with a single platform for 100K customers—all in 4 months.
                     </CardDescription>
                   </div>
-                  <Badge variant="secondary">4 months</Badge>
                 </div>
               </CardHeader>
               <CardContent>
@@ -53,15 +50,6 @@ export default function CaseStudiesPage() {
                     <Users className="h-4 w-4 text-primary" />
                     <span className="text-sm font-medium">100K+ customers</span>
                   </div>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-primary mb-2">Key Achievements</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Unified 3+ legacy payment systems into single platform</li>
-                    <li>• Implemented AI-powered payment recommendations</li>
-                    <li>• 15% increase in active user engagement</li>
-                  </ul>
                 </div>
 
                 <Button asChild className="w-full">
@@ -83,13 +71,12 @@ export default function CaseStudiesPage() {
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div>
-                    <CardTitle className="text-xl mb-2">Modernizing Retail: Mobile-First POS System</CardTitle>
+                    <CardTitle className="text-xl mb-2">Getting checkout off the counter and onto the sales floor</CardTitle>
                     <CardDescription>
                       Transformed 20-year-old point-of-sale system into modern, omnichannel experience across 31+ stores
                       with mobile checkout capabilities.
                     </CardDescription>
                   </div>
-                  <Badge variant="secondary">32 weeks</Badge>
                 </div>
               </CardHeader>
               <CardContent>
@@ -104,14 +91,6 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="font-semibold text-primary mb-2">Key Achievements</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>Mobile-first design enabling checkout anywhere in store</li>
-                    <li>Unified omnichannel experience across all touchpoints</li>
-                    <li>Specialized workflows for jewelry, salon, and other departments</li>
-                  </ul>
-                </div>
 
                 <Button asChild className="w-full">
                   <Link href="/case-studies/jcpenney-pos">
