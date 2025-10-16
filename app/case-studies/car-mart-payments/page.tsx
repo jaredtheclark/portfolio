@@ -21,10 +21,10 @@ export default function CarMartCaseStudy() {
           </Button>
 
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-balance mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">
               Transforming Auto Finance: How I Led a Unified Payments Platform That Tripled Autopay Adoption
             </h1>
-            <p className="text-xl text-muted-foreground text-balance">
+            <p className="text-lg leading-relaxed text-muted-foreground text-balance">
               I led the strategic UX transformation of America's Car-Mart's payment infrastructure, replacing 3+ legacy
               systems with a unified platform serving 100,000+ customers across 150+ dealerships, achieving 200%
               increase in autopay adoption and 15% growth in active users.
@@ -67,7 +67,7 @@ export default function CarMartCaseStudy() {
       {/* Project Overview */}
       <section className="py-12 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Project Overview & Context</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Project Overview & Context</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <Card>
@@ -144,35 +144,35 @@ export default function CarMartCaseStudy() {
       {/* The Challenge */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">The Challenge</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">The Challenge</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-primary mb-4">Business Problems</h3>
-              <ul className="space-y-3 text-muted-foreground">
+              <h3 className="text-2xl font-semibold text-primary mb-4">Business Problems</h3>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Fragmented Systems:</strong> Multiple payment platforms (CheckFree, Repay, Payment Mate)
                     creating operational complexity
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Poor Customer Experience:</strong> Manual workarounds, inconsistent interfaces, limited
                     payment options
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Compliance Risk:</strong> Manual fund routing to bond groups, NACHA liability exposure
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Missed Revenue:</strong> Low autopay adoption (2%), limited digital engagement
                   </span>
                 </li>
@@ -180,27 +180,27 @@ export default function CarMartCaseStudy() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-primary mb-4">User Pain Points</h3>
-              <ul className="space-y-3 text-muted-foreground">
+              <h3 className="text-2xl font-semibold text-primary mb-4">User Pain Points</h3>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Complex payment processes across multiple systems</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">Complex payment processes across multiple systems</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Limited payment method options</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">Limited payment method options</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span>No unified view of payment history</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">No unified view of payment history</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Difficult autopay enrollment process</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">Difficult autopay enrollment process</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Inconsistent experience across channels</span>
+                  <span className="text-lg leading-relaxed text-muted-foreground">Inconsistent experience across channels</span>
                 </li>
               </ul>
             </div>
@@ -211,7 +211,7 @@ export default function CarMartCaseStudy() {
       {/* My Approach */}
       <section className="py-12 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">My Approach & Process</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">My Approach & Process</h2>
 
           <div className="space-y-8">
             <Card>
@@ -220,39 +220,39 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Jobs-to-Be-Done (JTBD) Workshop Leadership</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• I led cross-functional stakeholders through structured JTBD methodology</li>
-                    <li>• Collaborated with Business Analysts to facilitate ORCA workshop sessions</li>
-                    <li>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Jobs-to-Be-Done (JTBD) Workshop Leadership</h4>
+                  <ul className="space-y-2">
+                    <li className="text-lg leading-relaxed">• I led cross-functional stakeholders through structured JTBD methodology</li>
+                    <li className="text-lg leading-relaxed">• Collaborated with Business Analysts to facilitate ORCA workshop sessions</li>
+                    <li className="text-lg leading-relaxed">
                       • <strong>Core JTBD I Identified:</strong> "When I process a payment I want a unified system to
                       handle every payment method (cash, card, ACH, etc.) So that I don't rely on multiple programs or
                       manual workarounds."
                     </li>
-                    <li>• This insight became the strategic foundation for the entire platform redesign</li>
+                    <li className="text-lg leading-relaxed">• This insight became the strategic foundation for the entire platform redesign</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Custom UX Research Framework Development</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• I created a comprehensive research kit tailored to auto finance context</li>
-                    <li>• Conducted onsite contextual inquiry at multiple dealership locations</li>
-                    <li>• Led stakeholder interviews with lot managers, associates, and customers</li>
-                    <li>• Facilitated user testing sessions during prototype and build phases</li>
-                    <li>• Developed persona framework based on real customer segments and payment behaviors</li>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Custom UX Research Framework Development</h4>
+                  <ul className="space-y-2">
+                    <li className="text-lg leading-relaxed">• I created a comprehensive research kit tailored to auto finance context</li>
+                    <li className="text-lg leading-relaxed">• Conducted onsite contextual inquiry at multiple dealership locations</li>
+                    <li className="text-lg leading-relaxed">• Led stakeholder interviews with lot managers, associates, and customers</li>
+                    <li className="text-lg leading-relaxed">• Facilitated user testing sessions during prototype and build phases</li>
+                    <li className="text-lg leading-relaxed">• Developed persona framework based on real customer segments and payment behaviors</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Strategic AI Integration & Team Enablement</h4>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• I pioneered generative AI adoption to accelerate research synthesis by 40%</li>
-                    <li>• Developed AI-assisted wireframing process that maintained design quality standards</li>
-                    <li>
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Strategic AI Integration & Team Enablement</h4>
+                  <ul className="space-y-2">
+                    <li className="text-lg leading-relaxed">• I pioneered generative AI adoption to accelerate research synthesis by 40%</li>
+                    <li className="text-lg leading-relaxed">• Developed AI-assisted wireframing process that maintained design quality standards</li>
+                    <li className="text-lg leading-relaxed">
                       • Mentored senior designer in AI tool adoption, aligning with company leadership initiatives
                     </li>
-                    <li>• Created quality safeguards ensuring AI outputs met enterprise standards</li>
+                    <li className="text-lg leading-relaxed">• Created quality safeguards ensuring AI outputs met enterprise standards</li>
                   </ul>
                 </div>
               </CardContent>
@@ -264,8 +264,8 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Design System Selection & Strategy</h4>
-                  <p className="text-muted-foreground text-sm">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Design System Selection & Strategy</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     I evaluated and selected the appropriate design library to ensure team consistency and scalability.
                     Established Figma-to-React component alignment strategy that reduced design-development handoff
                     friction by 50%. Created comprehensive design-development workflow processes adopted across the
@@ -273,8 +273,8 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Cross-Functional Collaboration & Influence</h4>
-                  <p className="text-muted-foreground text-sm">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Cross-Functional Collaboration & Influence</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     I translated JTBD insights into actionable user stories that development teams could execute. Built
                     comprehensive product backlog in Azure DevOps with embedded design links and acceptance criteria.
                     Established design quality standards and review processes that ensured consistency throughout
@@ -290,7 +290,7 @@ export default function CarMartCaseStudy() {
       {/* Solution */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Solution & Design Decisions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Solution & Design Decisions</h2>
 
           <div className="space-y-8">
             <Card>
@@ -300,22 +300,22 @@ export default function CarMartCaseStudy() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Customer-Facing Capabilities</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Single interface for all payment methods</li>
-                      <li>• Autopay with debit card support</li>
-                      <li>• Self-service portal with complete payment history</li>
-                      <li>• Mobile-responsive design</li>
-                      <li>• Real-time payment confirmation</li>
+                    <h4 className="text-2xl font-semibold text-primary mb-3">Customer-Facing Capabilities</h4>
+                    <ul className="space-y-2">
+                      <li className="text-lg leading-relaxed">• Single interface for all payment methods</li>
+                      <li className="text-lg leading-relaxed">• Autopay with debit card support</li>
+                      <li className="text-lg leading-relaxed">• Self-service portal with complete payment history</li>
+                      <li className="text-lg leading-relaxed">• Mobile-responsive design</li>
+                      <li className="text-lg leading-relaxed">• Real-time payment confirmation</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Administrative Tools</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Automated fund routing to bond groups</li>
-                      <li>• Real-time reporting dashboard</li>
-                      <li>• Compliance tracking and audit trails</li>
-                      <li>• Enhanced reconciliation capabilities</li>
+                    <h4 className="text-2xl font-semibold text-primary mb-3">Administrative Tools</h4>
+                    <ul className="space-y-2">
+                      <li className="text-lg leading-relaxed">• Automated fund routing to bond groups</li>
+                      <li className="text-lg leading-relaxed">• Real-time reporting dashboard</li>
+                      <li className="text-lg leading-relaxed">• Compliance tracking and audit trails</li>
+                      <li className="text-lg leading-relaxed">• Enhanced reconciliation capabilities</li>
                     </ul>
                   </div>
                 </div>
@@ -348,28 +348,28 @@ export default function CarMartCaseStudy() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-primary">1. Simplification</h4>
-                      <p className="text-muted-foreground text-sm">
+                      <h4 className="text-2xl font-semibold text-primary">1. Simplification</h4>
+                      <p className="text-lg leading-relaxed text-muted-foreground">
                         Consolidated complex multi-system process into single intuitive interface
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary">2. Accessibility</h4>
-                      <p className="text-muted-foreground text-sm">
+                      <h4 className="text-2xl font-semibold text-primary">2. Accessibility</h4>
+                      <p className="text-lg leading-relaxed text-muted-foreground">
                         Designed for customers with varying technical literacy
                       </p>
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-primary">3. Trust</h4>
-                      <p className="text-muted-foreground text-sm">
+                      <h4 className="text-2xl font-semibold text-primary">3. Trust</h4>
+                      <p className="text-lg leading-relaxed text-muted-foreground">
                         Clear confirmation flows and transparent fee structure ($2.50 per transaction)
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary">4. Efficiency</h4>
-                      <p className="text-muted-foreground text-sm">
+                      <h4 className="text-2xl font-semibold text-primary">4. Efficiency</h4>
+                      <p className="text-lg leading-relaxed text-muted-foreground">
                         Reduced manual interventions and support ticket volume
                       </p>
                     </div>
@@ -384,7 +384,7 @@ export default function CarMartCaseStudy() {
       {/* Results */}
       <section className="py-12 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Results & Impact</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Results & Impact</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <Card>
@@ -434,38 +434,38 @@ export default function CarMartCaseStudy() {
                 <CardTitle className="text-lg">Business Value Delivered</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 text-muted-foreground text-sm">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Strategic Infrastructure:</strong> Modernized payment platform
                       supporting 5-year growth roadmap
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Technical Debt Reduction:</strong> Eliminated dependency on 3+
                       legacy systems, reducing maintenance costs
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Risk Mitigation:</strong> Enhanced compliance and reduced
                       NACHA liability exposure
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Operational Efficiency:</strong> Streamlined workflows for
                       2,200+ associates across 150+ locations
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Customer Retention:</strong> Improved payment experience
                       positioning company for long-term loyalty
                     </span>
@@ -480,7 +480,7 @@ export default function CarMartCaseStudy() {
       {/* Key Learnings */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Key Learnings & Insights</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Key Learnings & Insights</h2>
 
           <div className="space-y-6">
             <Card>
@@ -489,8 +489,8 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">AI as Strategic Accelerator, Not Replacement</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">AI as Strategic Accelerator, Not Replacement</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Successfully integrating AI tools into the design process required establishing clear quality gates
                     and human oversight. I learned that AI excels at accelerating initial exploration and synthesis, but
                     strategic design decisions still require human judgment and contextual understanding. The key was
@@ -500,8 +500,8 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">JTBD as Foundation for Cross-Functional Alignment</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">JTBD as Foundation for Cross-Functional Alignment</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Leading the JTBD workshop revealed how powerful this methodology is for creating shared
                     understanding across business, technology, and design teams. The core job statement we identified
                     became the north star for every design and development decision. I learned that investing time
@@ -518,8 +518,8 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Translating Design into Development Language</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Translating Design into Development Language</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     One of the most impactful aspects of this project was learning to bridge the gap between design
                     artifacts and development execution. By embedding design links directly into Azure DevOps user
                     stories and creating detailed acceptance criteria, I reduced back-and-forth questions by 60%. This
@@ -528,8 +528,8 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Stakeholder Management in Regulated Industries</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Stakeholder Management in Regulated Industries</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Working in auto finance required balancing user needs with strict compliance requirements and
                     business constraints. I learned that successful stakeholder management means understanding each
                     group's priorities and finding solutions that serve multiple objectives. The autopay feature, for
@@ -546,8 +546,8 @@ export default function CarMartCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Legacy System Integration Complexity</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Legacy System Integration Complexity</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Replacing three legacy payment systems while maintaining business continuity taught me the
                     importance of phased rollouts and comprehensive testing strategies. I learned to design with
                     migration paths in mind, creating interfaces that could gracefully handle both old and new system
@@ -556,8 +556,8 @@ export default function CarMartCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Designing for Financial Accessibility</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Designing for Financial Accessibility</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Working with buy-here-pay-here customers revealed unique challenges around financial literacy and
                     technology access. I learned to design payment interfaces that were simple enough for users with
                     limited digital experience while still providing the sophistication needed for complex financial
@@ -645,7 +645,7 @@ export default function CarMartCaseStudy() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-balance">
+          <p className="text-lg leading-relaxed text-muted-foreground text-balance">
             This case study demonstrates comprehensive UX leadership in a complex, regulated industry environment,
             showcasing strategic thinking, cross-functional influence, and measurable business impact essential for
             Principal-level positions.

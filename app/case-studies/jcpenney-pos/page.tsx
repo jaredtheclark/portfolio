@@ -21,10 +21,10 @@ export default function JCPenneyCaseStudy() {
           </Button>
 
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-balance mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">
               Modernizing Retail: How I Led Mobile-First POS Transformation Saving JCPenney $6.2M
             </h1>
-            <p className="text-xl text-muted-foreground text-balance">
+            <p className="text-lg leading-relaxed text-muted-foreground text-balance">
               I led the design strategy for transforming JCPenney's 20-year-old point-of-sale system into a modern,
               mobile-first omnichannel platform across 31+ stores, achieving $6.2M in cost savings and enabling checkout
               anywhere in the store.
@@ -67,7 +67,7 @@ export default function JCPenneyCaseStudy() {
       {/* Project Overview */}
       <section className="py-12 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Project Overview & Context</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Project Overview & Context</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <Card>
@@ -156,7 +156,7 @@ export default function JCPenneyCaseStudy() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-lg leading-relaxed text-muted-foreground">
                   20-year-old POS technology creating competitive disadvantage with slow, inflexible workflows that
                   couldn't adapt to modern retail needs.
                 </p>
@@ -171,7 +171,7 @@ export default function JCPenneyCaseStudy() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-lg leading-relaxed text-muted-foreground">
                   Associates tied to fixed registers with no mobile capabilities, creating bottlenecks and limiting
                   customer service flexibility.
                 </p>
@@ -186,20 +186,20 @@ export default function JCPenneyCaseStudy() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Customers</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Customers</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Long wait times and fragmented experience across online and in-store channels
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Sales Associates</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Sales Associates</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Limited mobility and inefficient workflows reducing productivity and customer service quality
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Business</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Business</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     High operational costs, competitive disadvantage, and lost sales opportunities
                   </p>
                 </div>
@@ -216,32 +216,32 @@ export default function JCPenneyCaseStudy() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">My Research Methodology</h3>
+              <h3 className="text-2xl font-semibold mb-4">My Research Methodology</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Jobs-to-Be-Done Analysis:</strong> I co-led JTBD and ORCA workshops, mapping every use case
                     team members encounter during transactions
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Contextual Inquiry:</strong> I conducted on-site observation across multiple store formats
                     to understand workflow variations
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Stakeholder Interviews:</strong> I facilitated sessions with store managers, associates, and
                     executives to align on requirements
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     <strong>Competitive Analysis:</strong> I benchmarked against modern retail experiences to identify
                     best practices
                   </span>
@@ -250,30 +250,30 @@ export default function JCPenneyCaseStudy() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Key Insights I Uncovered</h3>
+              <h3 className="text-2xl font-semibold mb-4">Key Insights I Uncovered</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     Mobile checkout could reduce customer wait times by 35% during peak hours
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     Credit approval integration was critical—70% of transactions involved store card applications
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     Unified customer data essential for omnichannel—customers expected seamless online-to-store
                     experience
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg leading-relaxed text-muted-foreground">
                     Associates needed flexible tools that worked across jewelry, salon, and general merchandise
                     departments
                   </span>
@@ -297,26 +297,26 @@ export default function JCPenneyCaseStudy() {
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Mobility First</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Mobility First</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       I designed for checkout anywhere in the store, untethering associates from fixed registers
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Seamless Integration</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Seamless Integration</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       I unified online and offline experiences through consistent data architecture
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Efficiency Focus</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Efficiency Focus</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       I streamlined every transaction step, reducing average checkout time by 40%
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Hardware-Aware Design</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Hardware-Aware Design</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       I leveraged Android POS device capabilities while designing for physical constraints
                     </p>
                   </div>
@@ -331,26 +331,26 @@ export default function JCPenneyCaseStudy() {
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Mobile POS Capabilities</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Mobile POS Capabilities</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       Created modular design system optimized for handheld Android devices
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Flexible Checkout System</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Flexible Checkout System</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       Designed seamless transition between mobile and fixed terminals mid-transaction
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Integrated Credit Processing</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Integrated Credit Processing</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       Embedded real-time approval within transaction flow, eliminating context switching
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-1">Unified Customer Database</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="text-2xl font-semibold text-primary mb-1">Unified Customer Database</h4>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
                       Designed interfaces leveraging single source of truth across all channels
                     </p>
                   </div>
@@ -375,10 +375,10 @@ export default function JCPenneyCaseStudy() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Floor-based transaction capabilities</li>
-                  <li>• Reduced customer wait times</li>
-                  <li>• Increased associate productivity</li>
+                <ul className="space-y-2">
+                  <li className="text-lg leading-relaxed">• Floor-based transaction capabilities</li>
+                  <li className="text-lg leading-relaxed">• Reduced customer wait times</li>
+                  <li className="text-lg leading-relaxed">• Increased associate productivity</li>
                 </ul>
               </CardContent>
             </Card>
@@ -391,10 +391,10 @@ export default function JCPenneyCaseStudy() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Start transactions on mobile</li>
-                  <li>• Transfer seamlessly to docking stations</li>
-                  <li>• Complete at fixed terminals</li>
+                <ul className="space-y-2">
+                  <li className="text-lg leading-relaxed">• Start transactions on mobile</li>
+                  <li className="text-lg leading-relaxed">• Transfer seamlessly to docking stations</li>
+                  <li className="text-lg leading-relaxed">• Complete at fixed terminals</li>
                 </ul>
               </CardContent>
             </Card>
@@ -404,10 +404,10 @@ export default function JCPenneyCaseStudy() {
                 <CardTitle>Integrated Credit Approval</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Real-time store card approval</li>
-                  <li>• Single-transaction completion</li>
-                  <li>• Improved conversion rates</li>
+                <ul className="space-y-2">
+                  <li className="text-lg leading-relaxed">• Real-time store card approval</li>
+                  <li className="text-lg leading-relaxed">• Single-transaction completion</li>
+                  <li className="text-lg leading-relaxed">• Improved conversion rates</li>
                 </ul>
               </CardContent>
             </Card>
@@ -417,10 +417,10 @@ export default function JCPenneyCaseStudy() {
                 <CardTitle>Unified Omnichannel Experience</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Connected online and in-store data</li>
-                  <li>• Consistent customer experience</li>
-                  <li>• Integrated payment processing</li>
+                <ul className="space-y-2">
+                  <li className="text-lg leading-relaxed">• Connected online and in-store data</li>
+                  <li className="text-lg leading-relaxed">• Consistent customer experience</li>
+                  <li className="text-lg leading-relaxed">• Integrated payment processing</li>
                 </ul>
               </CardContent>
             </Card>
@@ -433,20 +433,20 @@ export default function JCPenneyCaseStudy() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Jewelry Department</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Jewelry Department</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Specialized checkout for high-value items with enhanced security protocols
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Salon Services</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Salon Services</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Appointment and service-specific transactions with integrated scheduling
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Windows & Home</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4 className="text-2xl font-semibold text-primary mb-2">Windows & Home</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Large item and installation workflows with delivery coordination
                   </p>
                 </div>
@@ -513,38 +513,38 @@ export default function JCPenneyCaseStudy() {
                 <CardTitle>Business Value I Delivered</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 text-muted-foreground text-sm">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Strategic Foundation:</strong> Established 3-year
                       transformation roadmap enabling omnichannel retail strategy
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Customer Experience:</strong> Reduced wait times by 35% during
                       peak hours, improving satisfaction scores
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Associate Productivity:</strong> Increased transactions per
                       hour by 25% through mobile flexibility
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Technical Modernization:</strong> Replaced 20-year-old legacy
                       system with scalable, maintainable platform
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>
+                    <span className="text-lg leading-relaxed text-muted-foreground">
                       <strong className="text-foreground">Process Improvement:</strong> Enhanced agile development
                       practices and change management capabilities
                     </span>
@@ -623,10 +623,10 @@ export default function JCPenneyCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
                     Hardware-Software Integration Requires Deep Contextual Understanding
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Designing for physical Android POS devices taught me that successful hardware-software integration
                     goes beyond screen design. I learned to leverage device-specific capabilities like hardware buttons
                     and barcode scanners while designing around constraints like screen size and processing power. The
@@ -636,10 +636,10 @@ export default function JCPenneyCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
                     Seamless Transitions Are More Critical Than Perfect Endpoints
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     One of the most valuable insights from this project was realizing that the ability to move
                     transactions between devices mid-flow was more important than optimizing any single device
                     experience. Associates needed to start transactions on mobile, transfer to docking stations for
@@ -657,10 +657,10 @@ export default function JCPenneyCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
                     JTBD Workshops Create Shared Language Across Silos
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Co-leading JTBD and ORCA workshops with business stakeholders revealed how powerful this methodology
                     is for breaking down organizational silos. By mapping every use case team members encounter, we
                     created a shared vocabulary that product, engineering, and operations could all reference. This
@@ -670,8 +670,8 @@ export default function JCPenneyCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">Change Management Requires Design Thinking Too</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">Change Management Requires Design Thinking Too</h4>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Rolling out new technology to 31+ stores taught me that change management is itself a design
                     problem. I learned to design training materials, rollout sequences, and support documentation with
                     the same rigor as product interfaces. The 85% mobile adoption rate within 3 months wasn't just
@@ -689,10 +689,10 @@ export default function JCPenneyCaseStudy() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
                     Legacy System Replacement Requires Parallel Design Thinking
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Replacing a 20-year-old POS system while maintaining business continuity taught me to design for
                     both the ideal future state and the messy transition period. I learned to create interfaces that
                     could gracefully handle both old and new system states, allowing for phased rollouts and fallback
@@ -702,10 +702,10 @@ export default function JCPenneyCaseStudy() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-3">
+                  <h4 className="text-2xl font-semibold text-primary mb-3">
                     Specialized Workflows Require Modular Design Systems
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
                     Designing for jewelry, salon, and general merchandise departments revealed the importance of
                     modular, composable design systems. Each department had unique requirements—jewelry needed enhanced
                     security protocols, salons required appointment integration, and home goods needed delivery
@@ -796,7 +796,7 @@ export default function JCPenneyCaseStudy() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-balance">
+          <p className="text-lg leading-relaxed text-muted-foreground text-balance">
             This case study demonstrates enterprise retail transformation expertise, showcasing mobile-first design
             strategy, hardware-software integration, and measurable business impact through strategic UX leadership.
           </p>
