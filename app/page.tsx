@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { ArrowRight, Users, Target, Building2, Lightbulb, Zap } from "lucide-react"
+import { ArrowRight, Building2, Lightbulb, Zap } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -14,9 +14,12 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-balance mb-6">Research-driven design strategy that delivers results</h1>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display text-balance mb-6 uppercase tracking-tight">
+            Research-driven design strategy that delivers results
+          </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 max-w-3xl mx-auto">
-            Principal designer leading enterprise teams through discovery and launch, building products that serve users and hit business targets.
+            Principal designer leading enterprise teams through discovery and launch, building products that serve users
+            and hit business targets.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button size="lg" asChild>
@@ -35,14 +38,13 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">My Approach</h2>
+            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight">My Approach</h2>
             <p className="text-lg text-muted-foreground text-balance">
-              I lead with research, build with intention, and measure what matters. Every design decision ties back to user needs and business goals. Features ship with clear purpose and measurable success criteria.
+              I lead with research, build with intention, and measure what matters. Every design decision ties back to
+              user needs and business goals. Features ship with clear purpose and measurable success criteria.
             </p>
           </div>
 
-      
-    
           {/* Key Differentiators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
@@ -54,7 +56,9 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I've spent my career designing for complex organizations where nothing is simple. I navigate competing priorities, work within legacy system constraints, and design for diverse user bases without sacrificing brand consistency or user experience.
+                  I've spent my career designing for complex organizations where nothing is simple. I navigate competing
+                  priorities, work within legacy system constraints, and design for diverse user bases without
+                  sacrificing brand consistency or user experience.
                 </p>
               </CardContent>
             </Card>
@@ -96,10 +100,8 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Recent Work</h2>
-            <p className="text-lg text-muted-foreground">
-              Case studies about recent projects I've worked on.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight">Recent Work</h2>
+            <p className="text-lg text-muted-foreground">Case studies about recent projects I've worked on.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -186,14 +188,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      
-
       {/* Get In Touch */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
+          <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight">Let's Connect</h2>
           <p className="text-lg text-muted-foreground text-balance mb-8">
-            I'm looking for my next leadership role where I can build teams and shape product strategy. If you're hiring a Principal Designer who knows how to ship, let's talk.
+            I'm looking for my next leadership role where I can build teams and shape product strategy. If you're hiring
+            a Principal Designer who knows how to ship, let's talk.
           </p>
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button size="lg" asChild>
@@ -205,9 +206,7 @@ export default function HomePage() {
               </a>
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Available for full-time roles
-          </p>
+          <p className="text-sm text-muted-foreground">Available for full-time roles</p>
         </div>
       </section>
 
