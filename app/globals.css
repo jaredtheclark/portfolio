@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle:wght@400;500;600;700;800;900&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,7 +40,6 @@
   --font-sans: var(--font-golos-text), system-ui, -apple-system, sans-serif;
   --font-serif: ui-serif, Georgia, serif;
   --font-mono: ui-monospace, monospace;
-  --font-display: "BBH Sans Bartle", var(--font-golos-text), system-ui, sans-serif;
   --radius: 0.5rem;
   --shadow-2xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.05);
@@ -159,12 +157,19 @@
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
+    --font-display: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
   }
 
   /* Add display font utility class for headers */
   .font-display {
     font-family: var(--font-display);
     font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Apply display font to all heading elements */
+  h1, h2, h3 {
+    font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
 }
