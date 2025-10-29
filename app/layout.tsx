@@ -3,10 +3,9 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
-import localfont from "next/font/local"
+import localFont from "next/font/local"
 
 import "./globals.css"
-
 import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
 
 // Initialize fonts
@@ -20,7 +19,7 @@ const golosText = Golos_Text({
   variable: "--font-golos-text",
 })
 
-const bbhSansBartle = localfont({
+const bbhSansBartle = localFont({
   src: "./fonts/BBHSansBartle-Regular.ttf",
   variable: "--font-bbh-sans-bartle",
   display: "swap",
@@ -40,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${golosText.variable} ${bbhSansBartle.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
         </ThemeProvider>
