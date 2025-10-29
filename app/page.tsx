@@ -18,7 +18,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-transparent">
         <div className="max-w-6xl mx-auto text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight">
             Hi, I'm Jared 🤙

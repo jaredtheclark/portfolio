@@ -53,11 +53,13 @@
 
 /* Dark theme with dramatic black background and white text */
 .dark {
-  --background: oklch(0.12 0 0);
+  /* Updated background to exact #1B1B18 with more accurate OKLCH conversion */
+  --background: oklch(0.106 0.008 85);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.18 0 0);
+  /* Updated card and popover to match background more closely */
+  --card: oklch(0.12 0.008 85);
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.15 0 0);
+  --popover: oklch(0.106 0.008 85);
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.55 0.2 250);
   --primary-foreground: oklch(1.0 0 0);
@@ -77,7 +79,8 @@
   --chart-3: oklch(0.45 0.15 150);
   --chart-4: oklch(0.6 0.15 60);
   --chart-5: oklch(0.5 0.2 300);
-  --sidebar: oklch(0.1 0 0);
+  /* Updated sidebar to match background */
+  --sidebar: oklch(0.106 0.008 85);
   --sidebar-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.55 0.2 250);
   --sidebar-primary-foreground: oklch(1.0 0 0);
