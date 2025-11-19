@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import localFont from "next/font/local"
 
 import "./globals.css"
+
 import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
 
 // Initialize fonts
