@@ -24,8 +24,7 @@ export default function HomePage() {
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto">
-            Principal designer leading enterprise teams through discovery and launch, building products that serve users
-            and hit business targets.
+            Principal UX Product Designer specializing in enterprise fintech transformation. 10+ years driving measurable business outcomes through strategic design leadership at Fortune 500 retailers and financial services companies.
           </p>
           <div className="flex items-center justify-left gap-4">
             <Button size="lg" asChild>
@@ -125,7 +124,7 @@ export default function HomePage() {
                         with unified platform serving 100,000+ customers.
                       </CardDescription>
                     </div>
-                    <Badge variant="secondary">4 months</Badge>
+                    {/* <Badge variant="tertiary">4 months</Badge> */}
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -164,7 +163,7 @@ export default function HomePage() {
                         stores.
                       </CardDescription>
                     </div>
-                    <Badge variant="secondary">32 weeks</Badge>
+                    {/* <Badge variant="tertiary">32 weeks</Badge> */}
                   </div>
                 </CardHeader>
                 <CardContent>
