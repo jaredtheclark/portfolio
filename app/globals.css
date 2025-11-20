@@ -60,23 +60,23 @@
 /* Dark theme with dramatic black background and white text */
 .dark {
  --background: oklch(0.2404 0.0064 78.2033);
-  --foreground: oklch(90.359% 0.05669 92.891);
+  --foreground: oklch(97.827% 0.03214 93.527);
   --card: oklch(0.2715 0.0094 67.4155);
   --card-foreground: oklch(0.9551 0 0);
   --popover: oklch(0.2868 0.0084 75.2489);
   --popover-foreground: oklch(0.9551 0 0);
-  --primary: oklch(0.4777 0.0472 95.3933);
+  --primary: oklch(11.077% 0.01644 78.536);
   --primary-foreground: oklch(1.0000 0 0);
   --secondary: oklch(0.3490 0.0192 90.4143);
   --secondary-foreground: oklch(1.0000 0 0);
   --muted: oklch(0.3123 0.0078 59.3892);
-  --muted-foreground: oklch(0.7161 0.0091 56.2590);
+  --muted-foreground: oklch(76.447% 0.02405 56.743);
   --accent: oklch(0.3776 0.0100 73.5967);
   --accent-foreground: oklch(0.9551 0 0);
   --destructive: oklch(0.4610 0.1649 30.4417);
   --destructive-foreground: oklch(1.0000 0 0);
   --border: oklch(0.3776 0.0100 73.5967);
-  --input: oklch(0.3776 0.0100 73.5967);
+  --input: oklch(26.412% 0.01177 67.226);
   --ring: oklch(0.7937 0.1488 96.8750);
   --chart-1: oklch(0.6611 0.1160 185.9407);
   --chart-2: oklch(0.5995 0.1865 357.7732);

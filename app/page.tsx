@@ -34,7 +34,7 @@ export default function HomePage() {
               </Link>
             </Button> */}
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Let's Connect
+              Contact Me
             </Button>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-3xl font-display mb-4 uppercase tracking-tight text-left">
+            <h2 className="text-3xl font-display mb-2 uppercase tracking-tight text-left">
               Recent Projects
             </h2>
             <p className="text-lg text-muted-foreground text-left max-w-3xl">
@@ -145,7 +145,7 @@ export default function HomePage() {
   
 
       {/* Get In Touch */}
-      <section className="py-20 px-6 bg-muted/30">
+      <section className="py-20 px-6 border-t border-border-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight">Let's Connect</h2>
           <p className="text-lg text-muted-foreground text-balance mb-8">
@@ -154,7 +154,7 @@ export default function HomePage() {
           </p>
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Send Message
+              Contact Me
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
@@ -166,7 +166,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Added contact modal */}
       <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
 
       <Footer />
