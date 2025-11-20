@@ -7,8 +7,12 @@ import localFont from "next/font/local"
 
 import "./globals.css"
 
-import { Golos_Text } from 'next/font/google'
+import { Golos_Text, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
 
+// Initialize fonts
+const _ibmPlexSerif = V0_Font_IBM_Plex_Serif({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700"] })
+const _spaceMono = V0_Font_Space_Mono({ subsets: ['latin'], weight: ["400","700"] })
+const _spaceGrotesk = V0_Font_Space_Grotesk({ subsets: ['latin'], weight: ["300","400","500","600","700"] })
 
 const golosText = Golos_Text({
   subsets: ["latin"],
