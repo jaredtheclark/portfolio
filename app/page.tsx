@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">Follett Corporation</h4>
-                <p className="text-muted-foreground">Retail POS Experience Design</p>
+                <p className="text-muted-foreground">Service Design | Point of Sale</p>
               </div>
               <ProjectVideo
                 videoSrc="/videos/follett.mp4"
@@ -104,7 +104,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">JCPenney</h4>
-                <p className="text-muted-foreground">Retail POS Transformation</p>
+                <p className="text-muted-foreground">Design Systems | Point of Sale</p>
               </div>
               <ProjectVideo
                 videoSrc="/videos/jcpenney.mp4"
@@ -118,7 +118,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Information Security</h4>
-                <p className="text-muted-foreground">Design System Governance | Developer Collaboration</p>
+                <p className="text-muted-foreground">Design System Governance | User Research</p>
               </div>
               <ProjectVideo
                 videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/fVfPvmhLT9t5NVNli3WR3p/public/videos/walmart-infosec.mp4"
@@ -132,7 +132,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Legal Themis</h4>
-                <p className="text-muted-foreground">Team Leadership | Application Design Prototyping</p>
+                <p className="text-muted-foreground">Project Team Leadership | Prototyping</p>
               </div>
               <ProjectVideo
                 videoSrc="/videos/walmart-themis.mp4"
@@ -146,7 +146,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Data Ventures Luminate</h4>
-                <p className="text-muted-foreground">Design Ops | Prototyping</p>
+                <p className="text-muted-foreground">Data Visualization | Prototyping</p>
               </div>
               <ProjectVideo
                 videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/bAGU-KMJYTvs65GPnkfgFP/public/videos/walmart-luminate.mp4"
@@ -160,7 +160,7 @@ export default function HomePage() {
             <div className="group block">
               <div className="mb-4">
                 <h4 className="mb-1">Handled Home</h4>
-                <p className="text-muted-foreground">Residential Moving & Home Inventory Management</p>
+                <p className="text-muted-foreground">Design Systems | Consumer App Design</p>
               </div>
               <ProjectVideo
                 videoSrc="/videos/handled-home.mp4"
@@ -181,8 +181,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight">Let's Connect</h2>
           <p className="text-lg text-muted-foreground text-balance mb-8">
-            I'm looking for my next role where I can build teams and shape product strategy. If you need
-            a Designer who knows how to ship, let's talk.
+            I'm looking for my next role building teams and shaping product strategy. If you need a design leader who ships measurable outcomes, let's talk.
           </p>
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
