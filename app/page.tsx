@@ -102,16 +102,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Case Studies */}
+      {/* Featured Case Studies */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight text-left">
-              Selected Works
+              Featured Case Studies
             </h2>
             <p className="text-lg text-muted-foreground text-left">
-              Case Studies of recent projects I worked on. To learn more about any project, or to view a protected
-              project reach out on LinkedIn or email.
+              Deep dives into recent complex enterprise transformations.
             </p>
           </div>
 
@@ -195,6 +194,145 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Selected Works */}
+      <section className="py-20 px-6 bg-background border-t border-border/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-display mb-4 uppercase tracking-tight text-left">
+              Selected Works
+            </h2>
+            <p className="text-lg text-muted-foreground text-left max-w-3xl">
+              Case Studies of recent projects I worked on. To learn more about any project, or to view a protected
+              project reach out on LinkedIn or email.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* America's Car Mart */}
+            <Link href="/case-studies/car-mart-payments" className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                  America's Car Mart
+                </h3>
+                <p className="text-muted-foreground">UX Research | Team Leadership</p>
+              </div>
+              <div className="aspect-video w-full bg-[#2563EB] rounded-lg overflow-hidden transition-all group-hover:shadow-lg group-hover:opacity-90" />
+            </Link>
+
+            {/* Computer Care */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Snapshot
+                </Badge>
+                <h3 className="text-xl font-bold mb-1">Computer Care</h3>
+                <p className="text-muted-foreground">AI Design Systems | UX Engineering</p>
+              </div>
+              <div className="aspect-video w-full bg-[#333333] rounded-lg overflow-hidden" />
+            </div>
+
+            {/* Follett Corporation */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h4 className="text-xl font-bold mb-1">Follett Corporation</h4>
+                <p className="text-muted-foreground">Retail POS Experience Design</p>
+              </div>
+              <div className="aspect-video w-full bg-[#B48140] rounded-lg overflow-hidden" />
+            </div>
+
+            {/* JCPenney */}
+            <Link href="/case-studies/jcpenney-pos" className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">JCPenney</h3>
+                <p className="text-muted-foreground">Retail POS Transformation</p>
+              </div>
+              <div className="aspect-video w-full bg-[#E5E5E5] rounded-lg overflow-hidden transition-all group-hover:shadow-lg group-hover:opacity-90" />
+            </Link>
+
+            {/* Walmart Information Security */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1">Walmart Information Security</h3>
+                <p className="text-muted-foreground">Design System Governance | Developer Collaboration</p>
+              </div>
+              <div className="aspect-video w-full bg-[#1F2937] rounded-lg overflow-hidden" />
+            </div>
+
+            {/* Walmart Legal Themis */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1">Walmart Legal Themis</h3>
+                <p className="text-muted-foreground">Team Leadership | Application Design Prototyping</p>
+              </div>
+              <div className="aspect-video w-full bg-[#1D4ED8] rounded-lg overflow-hidden" />
+            </div>
+
+            {/* Walmart Data Ventures Luminate */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1">Walmart Data Ventures Luminate</h3>
+                <p className="text-muted-foreground">Design Ops | Prototyping</p>
+              </div>
+              <div className="aspect-video w-full bg-[#E5E5E5] rounded-lg overflow-hidden" />
+            </div>
+
+            {/* Handled Home */}
+            <div className="group block">
+              <div className="mb-4">
+                <Badge
+                  variant="outline"
+                  className="rounded-md px-3 py-1 border-muted-foreground/30 text-muted-foreground mb-3"
+                >
+                  Case Study
+                </Badge>
+                <h3 className="text-xl font-bold mb-1">Handled Home</h3>
+                <p className="text-muted-foreground">Residential Moving & Home Inventory Management</p>
+              </div>
+              <div className="aspect-video w-full bg-[#F97316] rounded-lg overflow-hidden" />
+            </div>
           </div>
         </div>
       </section>
