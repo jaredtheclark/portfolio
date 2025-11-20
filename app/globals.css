@@ -13,7 +13,7 @@
   --popover-foreground: oklch(0.2868 0.0084 75.2489);
   --primary: oklch(0.5452 0.0520 94.0565);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.5995 0.1865 357.7732);
+  --secondary: oklch(0.7423 0.1254 83.7643);
   --secondary-foreground: oklch(1.0000 0 0);
   --muted: oklch(0.9219 0 0);
   --muted-foreground: oklch(0.4625 0.0095 73.6478);
@@ -38,7 +38,7 @@
   --sidebar-border: oklch(0.3776 0.0100 73.5967);
   --sidebar-ring: oklch(0.6611 0.1160 185.9407);
   /* Removed font variables from :root - they're set by Next.js font loader in layout.tsx */
---radius: 0.3rem;
+  --radius: 0.3rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
   --shadow-blur: 8px;
@@ -59,25 +59,25 @@
 
 /* Dark theme with dramatic black background and white text */
 .dark {
-  --background: oklch(0.2868 0.0084 75.2489);
+ --background: oklch(0.2404 0.0064 78.2033);
   --foreground: oklch(0.9551 0 0);
-  --card: oklch(0.3317 0.0089 67.5123);
+  --card: oklch(0.2715 0.0094 67.4155);
   --card-foreground: oklch(0.9551 0 0);
   --popover: oklch(0.2868 0.0084 75.2489);
   --popover-foreground: oklch(0.9551 0 0);
-  --primary: oklch(0.8255 0.1108 94.3490);
+  --primary: oklch(0.4777 0.0472 95.3933);
   --primary-foreground: oklch(1.0000 0 0);
   --secondary: oklch(0.3490 0.0192 90.4143);
   --secondary-foreground: oklch(1.0000 0 0);
-  --muted: oklch(0.3317 0.0089 67.5123);
+  --muted: oklch(0.3123 0.0078 59.3892);
   --muted-foreground: oklch(0.7161 0.0091 56.2590);
   --accent: oklch(0.3776 0.0100 73.5967);
   --accent-foreground: oklch(0.9551 0 0);
-  --destructive: oklch(0.5995 0.1865 357.7732);
+  --destructive: oklch(0.4610 0.1649 30.4417);
   --destructive-foreground: oklch(1.0000 0 0);
   --border: oklch(0.3776 0.0100 73.5967);
   --input: oklch(0.3776 0.0100 73.5967);
-  --ring: oklch(0.6611 0.1160 185.9407);
+  --ring: oklch(0.7937 0.1488 96.8750);
   --chart-1: oklch(0.6611 0.1160 185.9407);
   --chart-2: oklch(0.5995 0.1865 357.7732);
   --chart-3: oklch(0.7161 0.0091 56.2590);
