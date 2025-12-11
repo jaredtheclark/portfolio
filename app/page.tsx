@@ -1,14 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
-import { CaseStudies } from "@/components/case-studies"
 import { ProjectVideo } from "@/components/project-video"
-import { ArrowRight, Building2, Lightbulb, Zap } from "lucide-react"
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -20,15 +17,15 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-6 bg-transparent">
         <div className="max-w-6xl mx-auto text-left">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight animate-fade-in">
             Hi, I'm Jared 🤙
           </h1>
-          <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto">
+          <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
             Principal UX Product Designer specializing in enterprise fintech transformation. 10+ years driving
             measurable business outcomes through strategic design leadership at Fortune 500 retailers and financial
             services companies.
           </p>
-          <div className="flex items-center justify-left gap-4">
+          <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
             {/* <Button size="lg" asChild>
               <Link href="/case-studies">
                 View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
@@ -41,17 +38,13 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* Case Studies */}
-
 
       {/* Selected Works */}
       <section className="py-20 px-6 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl font-display mb-2 uppercase tracking-tight text-left">
-              Recent Projects
-            </h2>
+          <div className="mb-12 animate-slide-up">
+            <h2 className="text-3xl font-display mb-2 uppercase tracking-tight text-left">Recent Projects</h2>
             <p className="text-lg text-muted-foreground text-left max-w-3xl">
               To learn more about any project and see a case study, reach out on LinkedIn or email.
             </p>
@@ -59,7 +52,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* America's Car Mart */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
               <div className="mb-4">
                 <h4 className="mb-1">America's Car Mart</h4>
                 <p className="text-muted-foreground">UX Research | Team Leadership</p>
@@ -73,7 +66,7 @@ export default function HomePage() {
             </div>
 
             {/* Computer Care */}
-            {/* <div className="group block">
+            {/* <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
               <div className="mb-4">
                 <h4 className="mb-1">Computer Care</h4>
                 <p className="text-muted-foreground">AI Design Systems | UX Engineering</p>
@@ -87,7 +80,7 @@ export default function HomePage() {
             </div> */}
 
             {/* Follett Corporation */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
               <div className="mb-4">
                 <h4 className="mb-1">Follett Corporation</h4>
                 <p className="text-muted-foreground">Service Design | Point of Sale</p>
@@ -101,7 +94,7 @@ export default function HomePage() {
             </div>
 
             {/* JCPenney */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
               <div className="mb-4">
                 <h4 className="mb-1">JCPenney</h4>
                 <p className="text-muted-foreground">Design Systems | Point of Sale</p>
@@ -115,7 +108,7 @@ export default function HomePage() {
             </div>
 
             {/* Walmart Information Security */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Information Security</h4>
                 <p className="text-muted-foreground">Design System Governance | User Research</p>
@@ -129,7 +122,7 @@ export default function HomePage() {
             </div>
 
             {/* Walmart Legal Themis */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-3">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Legal Themis</h4>
                 <p className="text-muted-foreground">Project Team Leadership | Prototyping</p>
@@ -143,7 +136,7 @@ export default function HomePage() {
             </div>
 
             {/* Walmart Data Ventures Luminate */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-1">
               <div className="mb-4">
                 <h4 className="mb-1">Walmart Data Ventures Luminate</h4>
                 <p className="text-muted-foreground">Data Visualization | Prototyping</p>
@@ -157,7 +150,7 @@ export default function HomePage() {
             </div>
 
             {/* Handled Home */}
-            <div className="group block">
+            <div className="group block hover-scale transition-smooth animate-fade-in-delay-2">
               <div className="mb-4">
                 <h4 className="mb-1">Handled Home</h4>
                 <p className="text-muted-foreground">Design Systems | Consumer App Design</p>
@@ -174,16 +167,18 @@ export default function HomePage() {
       </section>
 
       {/* Additional Works */}
-  
 
       {/* Get In Touch */}
       <section className="py-20 px-6 border-t border-border-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight">Let's Connect</h2>
-          <p className="text-lg text-muted-foreground text-balance mb-8">
-            I'm looking for my next role building teams and shaping product strategy. If you need a design leader who ships measurable outcomes, let's talk.
+          <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight animate-fade-in">
+            Let's Connect
+          </h2>
+          <p className="text-lg text-muted-foreground text-balance mb-8 animate-fade-in-delay-1">
+            I'm looking for my next role building teams and shaping product strategy. If you need a design leader who
+            ships measurable outcomes, let's talk.
           </p>
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in-delay-2">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
               Contact Me
             </Button>
@@ -193,7 +188,7 @@ export default function HomePage() {
               </a>
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">Available for full-time roles</p>
+          <p className="text-sm text-muted-foreground animate-fade-in-delay-3">Available for full-time roles</p>
         </div>
       </section>
 

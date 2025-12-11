@@ -7,36 +7,36 @@
 :root {
   --background: oklch(0.9399 0.0124 91.5213);
   --foreground: oklch(0.2868 0.0084 75.2489);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(1.0 0 0);
   --card-foreground: oklch(0.2868 0.0084 75.2489);
-  --popover: oklch(1.0000 0 0);
+  --popover: oklch(1.0 0 0);
   --popover-foreground: oklch(0.2868 0.0084 75.2489);
   --primary: oklch(19.796% 0.02472 45.59);
-  --primary-foreground: oklch(1.0000 0 0);
+  --primary-foreground: oklch(1.0 0 0);
   --secondary: oklch(31.757% 0.0502 84.765);
-  --secondary-foreground: oklch(1.0000 0 0);
+  --secondary-foreground: oklch(1.0 0 0);
   --muted: oklch(0.9219 0 0);
   --muted-foreground: oklch(0.4625 0.0095 73.6478);
   --accent: oklch(0.9219 0 0);
   --accent-foreground: oklch(0.2868 0.0084 75.2489);
   --destructive: oklch(0.5995 0.1865 357.7732);
-  --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.8687 0.0043 56.3660);
-  --input: oklch(0.8687 0.0043 56.3660);
-  --ring: oklch(0.6611 0.1160 185.9407);
-  --chart-1: oklch(0.6611 0.1160 185.9407);
+  --destructive-foreground: oklch(1.0 0 0);
+  --border: oklch(0.8687 0.0043 56.366);
+  --input: oklch(0.8687 0.0043 56.366);
+  --ring: oklch(0.6611 0.116 185.9407);
+  --chart-1: oklch(0.6611 0.116 185.9407);
   --chart-2: oklch(0.5995 0.1865 357.7732);
   --chart-3: oklch(0.4625 0.0095 73.6478);
   --chart-4: oklch(0.6192 0.0107 72.5994);
   --chart-5: oklch(0.7717 0.0084 73.7245);
   --sidebar: oklch(0.2868 0.0084 75.2489);
   --sidebar-foreground: oklch(0.9551 0 0);
-  --sidebar-primary: oklch(0.6611 0.1160 185.9407);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.3776 0.0100 73.5967);
+  --sidebar-primary: oklch(0.6611 0.116 185.9407);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
+  --sidebar-accent: oklch(0.3776 0.01 73.5967);
   --sidebar-accent-foreground: oklch(0.9551 0 0);
-  --sidebar-border: oklch(0.3776 0.0100 73.5967);
-  --sidebar-ring: oklch(0.6611 0.1160 185.9407);
+  --sidebar-border: oklch(0.3776 0.01 73.5967);
+  --sidebar-ring: oklch(0.6611 0.116 185.9407);
   /* Removed font variables from :root - they're set by Next.js font loader in layout.tsx */
   --radius: 0.3rem;
   --shadow-x: 0px;
@@ -47,11 +47,11 @@
   --shadow-color: #000000;
   --shadow-2xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 1px 2px -3px hsl(0 0% 0% / 0.10);
-  --shadow: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 1px 2px -3px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 2px 4px -3px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 4px 6px -3px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 8px 10px -3px hsl(0 0% 0% / 0.10);
+  --shadow-sm: 0px 4px 8px -2px hsl(0 0% 0% / 0.1), 0px 1px 2px -3px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -2px hsl(0 0% 0% / 0.1), 0px 1px 2px -3px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -2px hsl(0 0% 0% / 0.1), 0px 2px 4px -3px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.1), 0px 4px 6px -3px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.1), 0px 8px 10px -3px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.25);
   --tracking-normal: normal;
   --spacing: 0.25rem;
@@ -59,38 +59,38 @@
 
 /* Dark theme with dramatic black background and white text */
 .dark {
- --background: oklch(0.2404 0.0064 78.2033);
+  --background: oklch(0.2404 0.0064 78.2033);
   --foreground: oklch(97.827% 0.03214 93.527);
   --card: oklch(0.2715 0.0094 67.4155);
   --card-foreground: oklch(0.9551 0 0);
   --popover: oklch(0.2868 0.0084 75.2489);
   --popover-foreground: oklch(0.9551 0 0);
   --primary: oklch(11.077% 0.01644 78.536);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.3490 0.0192 90.4143);
-  --secondary-foreground: oklch(1.0000 0 0);
+  --primary-foreground: oklch(1.0 0 0);
+  --secondary: oklch(0.349 0.0192 90.4143);
+  --secondary-foreground: oklch(1.0 0 0);
   --muted: oklch(0.3123 0.0078 59.3892);
   --muted-foreground: oklch(76.447% 0.02405 56.743);
-  --accent: oklch(0.3776 0.0100 73.5967);
+  --accent: oklch(0.3776 0.01 73.5967);
   --accent-foreground: oklch(0.9551 0 0);
-  --destructive: oklch(0.4610 0.1649 30.4417);
-  --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.3776 0.0100 73.5967);
+  --destructive: oklch(0.461 0.1649 30.4417);
+  --destructive-foreground: oklch(1.0 0 0);
+  --border: oklch(0.3776 0.01 73.5967);
   --input: oklch(26.412% 0.01177 67.226);
-  --ring: oklch(0.7937 0.1488 96.8750);
-  --chart-1: oklch(0.6611 0.1160 185.9407);
+  --ring: oklch(0.7937 0.1488 96.875);
+  --chart-1: oklch(0.6611 0.116 185.9407);
   --chart-2: oklch(0.5995 0.1865 357.7732);
-  --chart-3: oklch(0.7161 0.0091 56.2590);
+  --chart-3: oklch(0.7161 0.0091 56.259);
   --chart-4: oklch(0.5534 0.0116 58.0708);
-  --chart-5: oklch(0.4444 0.0096 73.6390);
+  --chart-5: oklch(0.4444 0.0096 73.639);
   --sidebar: oklch(0.2415 0.0073 67.4737);
   --sidebar-foreground: oklch(0.9551 0 0);
-  --sidebar-primary: oklch(0.6611 0.1160 185.9407);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-primary: oklch(0.6611 0.116 185.9407);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
   --sidebar-accent: oklch(0.3317 0.0089 67.5123);
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3317 0.0089 67.5123);
-  --sidebar-ring: oklch(0.6611 0.1160 185.9407);
+  --sidebar-ring: oklch(0.6611 0.116 185.9407);
 
   --radius: 0.3rem;
   --shadow-x: 0px;
@@ -99,14 +99,14 @@
   --shadow-spread: -2px;
   --shadow-opacity: 0.2;
   --shadow-color: #000000;
-  --shadow-2xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.10);
-  --shadow-xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.10);
-  --shadow-sm: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 1px 2px -3px hsl(0 0% 0% / 0.20);
-  --shadow: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 1px 2px -3px hsl(0 0% 0% / 0.20);
-  --shadow-md: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 2px 4px -3px hsl(0 0% 0% / 0.20);
-  --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 4px 6px -3px hsl(0 0% 0% / 0.20);
-  --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 8px 10px -3px hsl(0 0% 0% / 0.20);
-  --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.50);
+  --shadow-2xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.1);
+  --shadow-xs: 0px 4px 8px -2px hsl(0 0% 0% / 0.1);
+  --shadow-sm: 0px 4px 8px -2px hsl(0 0% 0% / 0.2), 0px 1px 2px -3px hsl(0 0% 0% / 0.2);
+  --shadow: 0px 4px 8px -2px hsl(0 0% 0% / 0.2), 0px 1px 2px -3px hsl(0 0% 0% / 0.2);
+  --shadow-md: 0px 4px 8px -2px hsl(0 0% 0% / 0.2), 0px 2px 4px -3px hsl(0 0% 0% / 0.2);
+  --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.2), 0px 4px 6px -3px hsl(0 0% 0% / 0.2);
+  --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.2), 0px 8px 10px -3px hsl(0 0% 0% / 0.2);
+  --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.5);
 }
 
 /* Fixed @theme inline to properly reference font variables from Next.js */
@@ -191,5 +191,72 @@
   h3 {
     font-family: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
     letter-spacing: -0.02em;
+  }
+}
+
+/* Adding animation utilities and keyframes */
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up-delay-1 {
+    animation: slideUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  /* Scale up hover effect */
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
