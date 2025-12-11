@@ -140,7 +140,7 @@ export function ContactModal({ trigger, open, onOpenChange }: ContactModalProps)
 
           {submitStatus === "error" && (
             <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg text-sm">
-              Failed to send message. Please try again or contact me directly.
+              Failed to send message. Please try again or get in touch directly.
             </div>
           )}
 

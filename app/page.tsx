@@ -21,7 +21,7 @@ export default function HomePage() {
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            Principal UX Product Designer specializing in enterprise fintech transformation. 10+ years driving
+            Product Design Leader specializing in enterprise fintech transformation. 10+ years driving
             measurable business outcomes through strategic design leadership at Fortune 500 retailers and financial
             services companies.
           </p>
@@ -32,7 +32,12 @@ export default function HomePage() {
               </Link>
             </Button> */}
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Contact Me
+              Get in Touch
+            </Button>
+              <Button variant="outline" size="lg" asChild>
+              <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
             </Button>
           </div>
         </div>
@@ -180,7 +185,7 @@ export default function HomePage() {
           </p>
           <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in-delay-2">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
-              Contact Me
+              Get in Touch
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
