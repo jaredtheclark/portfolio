@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ContactModal } from "@/components/contact-modal"
+import { LinkedInButton } from "@/components/linkedin-button"
 
 export function LetsConnect() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,11 +20,7 @@ export function LetsConnect() {
           <Button size="lg" onClick={() => setIsModalOpen(true)}>
             Send Message
           </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </Button>
+          <LinkedInButton />
         </div>
         <p className="text-sm text-muted-foreground">Available for full-time roles</p>
       </div>

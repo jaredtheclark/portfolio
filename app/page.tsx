@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
 import { ProjectVideo } from "@/components/project-video"
+import { LinkedInButton } from "@/components/linkedin-button"
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -21,24 +22,15 @@ export default function HomePage() {
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
-            Product Design Leader specializing in enterprise fintech transformation. 10+ years driving
-            measurable business outcomes through strategic design leadership at Fortune 500 retailers and financial
-            services companies.
+            Product Design Leader specializing in enterprise fintech transformation. 10+ years driving measurable
+            business outcomes through strategic design leadership at Fortune 500 retailers and financial services
+            companies.
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
-            {/* <Button size="lg" asChild>
-              <Link href="/case-studies">
-                View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button> */}
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
               Get in Touch
             </Button>
-              <Button variant="outline" size="lg" asChild>
-              <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </Button>
+            <LinkedInButton />
           </div>
         </div>
       </section>
@@ -175,7 +167,7 @@ export default function HomePage() {
 
       {/* Get In Touch */}
       <section className="py-20 px-6 border-t border-border-50">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-left">
           <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight animate-fade-in">
             Let's Connect
           </h2>
@@ -183,15 +175,11 @@ export default function HomePage() {
             I'm looking for my next role building teams and shaping product strategy. If you need a design leader who
             ships measurable outcomes, let's talk.
           </p>
-          <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in-delay-2">
+          <div className="flex items-center gap-4 mb-8 animate-fade-in-delay-2 justify-start">
             <Button size="lg" onClick={() => setIsContactModalOpen(true)}>
               Get in Touch
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://www.linkedin.com/in/jaredclarkdesigner/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </Button>
+            <LinkedInButton />
           </div>
           <p className="text-sm text-muted-foreground animate-fade-in-delay-3">Available for full-time roles</p>
         </div>
