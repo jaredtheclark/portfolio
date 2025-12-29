@@ -29,7 +29,7 @@ export function ProjectCard({
   return (
     <div className="group block transition-smooth animate-fade-in-delay-1">
       <div className="mb-4">
-        <h4 className="mb-1">{title}</h4>
+        <h5 className="mb-1">{title}</h5>
         <p className="text-muted-foreground">{description}</p>
       </div>
 
@@ -48,7 +48,7 @@ export function ProjectCard({
           <DialogContent className="max-w-7xl p-0 gap-0 overflow-hidden" showCloseButton={false}>
             {/* Header with title and close button */}
             <div className="flex items-start justify-between p-8 pb-6">
-              <DialogTitle className="text-3xl font-display">{title}</DialogTitle>
+              <DialogTitle className="text-lg font-display">{title}</DialogTitle>
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
