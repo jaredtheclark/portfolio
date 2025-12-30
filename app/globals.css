@@ -181,17 +181,18 @@
   }
 
   /* Add display font utility class for headers using BBH Sans Bartle */
-  .font-display {
+  /* .font-display {
     font-family: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
     letter-spacing: -0.02em;
-  }
+  } */
 
   /* Apply display font to all heading elements */
   h1,
   h2,
   h3 {
-    font-family: var(--font-bbh-sans-bartle), var(--font-golos-text), system-ui, sans-serif;
+    font-family: var(--font-golos-text), system-ui, sans-serif;
     letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 

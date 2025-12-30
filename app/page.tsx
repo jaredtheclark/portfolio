@@ -18,7 +18,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-6 bg-transparent">
         <div className="max-w-6xl mx-auto text-left">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 uppercase tracking-tight animate-fade-in">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-balance mb-6 tracking-tight animate-fade-in">
             Hi, I'm Jared 🤙
           </h1>
           <p className="text-xl text-muted-foreground text-balance mb-8 mx-auto animate-fade-in-delay-1">
@@ -40,7 +40,7 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 animate-slide-up">
-            <h2 className="text-3xl font-display mb-2 uppercase tracking-tight text-left">Recent Projects</h2>
+            <h2 className="text-3xl font-display mb-2 tracking-tight text-left">Recent Projects</h2>
             <p className="text-lg text-muted-foreground text-left">
               To learn more about any project and see a case study, reach out on LinkedIn or contact me.
             </p>
@@ -118,7 +118,7 @@ export default function HomePage() {
       {/* Say Hello */}
       <section className="py-20 px-6 border-t border-border-50">
         <div className="max-w-6xl mx-auto text-left">
-          <h2 className="text-3xl md:text-4xl font-display mb-6 uppercase tracking-tight animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-display mb-6 tracking-tight animate-fade-in">
             Let's Connect
           </h2>
           <p className="text-lg text-muted-foreground text-balance mb-8 animate-fade-in-delay-1">
