@@ -29,7 +29,7 @@ export function ProjectCard({
   return (
     <div className="group block transition-smooth animate-fade-in-delay-1">
       <div className="mb-4">
-        <h5 className="mb-1">{title}</h5>
+        <h5 className="">{title}</h5>
         <p className="text-muted-foreground">{description}</p>
       </div>
 
