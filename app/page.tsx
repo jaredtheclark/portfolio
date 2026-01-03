@@ -25,8 +25,11 @@ export default function HomePage() {
             Design Systems | UX Research | Strategic Partner
           </p>
           <div className="flex items-center justify-left gap-4 animate-fade-in-delay-2">
-            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
-              Say Hello
+            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer group">
+              <span className="inline-flex items-center transition-all duration-300 ease-out">
+                <span>Say Hello</span>
+                <span className="inline-block w-0 overflow-hidden opacity-0 translate-x-[-8px] transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:translate-x-0 group-hover:ml-2">👋</span>
+              </span>
             </Button>
             <LinkedInButton />
           </div>
@@ -125,8 +128,11 @@ export default function HomePage() {
             ships measurable outcomes, let's talk.
           </p>
           <div className="flex items-center gap-4 mb-8 animate-fade-in-delay-2 justify-start">
-            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer">
-              Say Hello
+            <Button size="lg" onClick={() => setIsContactModalOpen(true)} className="cursor-pointer group">
+              <span className="inline-flex items-center transition-all duration-300 ease-out">
+                <span>Say Hello</span>
+                <span className="inline-block w-0 overflow-hidden opacity-0 translate-x-[-8px] transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:translate-x-0 group-hover:ml-2">👋</span>
+              </span>
             </Button>
             <LinkedInButton />
           </div>
