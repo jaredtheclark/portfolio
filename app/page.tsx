@@ -53,8 +53,8 @@ export default function HomePage() {
             <ProjectCard
               title="America's Car Mart"
               description="UX Research | Team Leadership"
-              videoSrc="/videos/car-mart.mp4"
-              posterSrc="/images/posters/car-mart.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
               fallbackColor="#2563EB"
             />
 
@@ -62,8 +62,8 @@ export default function HomePage() {
             <ProjectCard
               title="Follett Corporation"
               description="Service Design | Point of Sale"
-              videoSrc="/videos/follett.mp4"
-              posterSrc="/images/posters/follett.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
               fallbackColor="#204A65"
             />
 
@@ -71,8 +71,8 @@ export default function HomePage() {
             <ProjectCard
               title="JCPenney"
               description="Design Systems | Point of Sale"
-              videoSrc="/videos/jcpenney.mp4"
-              posterSrc="/images/posters/jcpenney.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
               fallbackColor="#E5E5E5"
             />
 
@@ -80,8 +80,8 @@ export default function HomePage() {
             <ProjectCard
               title="Walmart Information Security"
               description="Design System Governance | User Research"
-              videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/fVfPvmhLT9t5NVNli3WR3p/public/videos/walmart-infosec.mp4"
-              posterSrc="/images/posters/walmart-infosec.jpg"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-infosec.png"
               fallbackColor="#1F2937"
             />
 
@@ -89,8 +89,8 @@ export default function HomePage() {
             <ProjectCard
               title="Walmart Legal Themis"
               description="Project Team Leadership | Prototyping"
-              videoSrc="/videos/walmart-themis.mp4"
-              posterSrc="/images/posters/walmart-themis.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
               fallbackColor="#1D4ED8"
             />
 
@@ -98,8 +98,8 @@ export default function HomePage() {
             <ProjectCard
               title="Walmart Data Ventures Luminate"
               description="Data Visualization | Prototyping"
-              videoSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_7GKaDJbkE1fsPvrgjbG1nZ7C9Lbq/bAGU-KMJYTvs65GPnkfgFP/public/videos/walmart-luminate.mp4"
-              posterSrc="/images/posters/walmart-luminate.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-luminate.png"
               fallbackColor="#E5E5E5"
             />
 
@@ -107,8 +107,8 @@ export default function HomePage() {
             <ProjectCard
               title="Handled Home"
               description="Design Systems | Consumer App Design"
-              videoSrc="/videos/handled-home.mp4"
-              posterSrc="/images/posters/handled-home.png"
+              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.mp4"
+              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/handled-home.png"
               fallbackColor="#F97316"
             />
           </div>

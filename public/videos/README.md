@@ -1,32 +1,52 @@
 # Project Videos & Poster Images
 
-This directory contains video demos and poster images for portfolio projects.
+This portfolio uses **Vercel Blob Storage** to serve video files efficiently.
 
-## File Naming Convention
+## Why Vercel Blob?
 
-### Videos (MP4 format recommended)
-Place video files in this directory with the following names:
+Video files are too large to commit to Git repositories. Vercel Blob provides:
+- Fast CDN delivery
+- Automatic optimization
+- No repository bloat
+- Free tier: 100GB transfer/month
 
+## How to Upload Videos to Vercel Blob
+
+### Step 1: Access Vercel Blob Storage
+1. Go to [vercel.com](https://vercel.com) and open your project
+2. Navigate to **Storage** tab in the sidebar
+3. Click **Create Database** → **Blob** (if not already created)
+4. Or click into your existing Blob storage
+
+### Step 2: Upload Your Video Files
+1. Click **Upload** button in Blob dashboard
+2. Select your video file(s)
+3. Once uploaded, click on the file to copy its URL
+4. The URL will look like: `https://[hash].public.blob.vercel-storage.com/[filename]`
+
+### Step 3: Update the Code
+Replace the local video path with the Blob URL in `app/page.tsx`:
+
+```tsx
+// ❌ Before (won't work)
+videoSrc="/videos/car-mart.mp4"
+
+// ✅ After (works!)
+videoSrc="https://[your-hash].public.blob.vercel-storage.com/car-mart.mp4"
+```
+
+## Videos Needed
+
+### ✅ Already Uploaded (Working)
+- `walmart-infosec.mp4` - Walmart Information Security
+- `walmart-luminate.mp4` - Walmart Data Ventures Luminate
+
+### ⚠️ Need to Upload (Currently using fallback colors)
 - `car-mart.mp4` - America's Car Mart
-- `computer-care.mp4` - Computer Care
 - `follett.mp4` - Follett Corporation
 - `jcpenney.mp4` - JCPenney
-- `walmart-infosec.mp4` - Walmart Information Security
 - `walmart-themis.mp4` - Walmart Legal Themis
-- `walmart-luminate.mp4` - Walmart Data Ventures Luminate
 - `handled-home.mp4` - Handled Home
-
-### Poster Images (JPG format recommended)
-Place poster images (video thumbnails) in `/public/images/posters/` with the following names:
-
-- `car-mart.jpg` - America's Car Mart
-- `computer-care.jpg` - Computer Care
-- `follett.jpg` - Follett Corporation
-- `jcpenney.jpg` - JCPenney
-- `walmart-infosec.jpg` - Walmart Information Security
-- `walmart-themis.jpg` - Walmart Legal Themis
-- `walmart-luminate.jpg` - Walmart Data Ventures Luminate
-- `handled-home.jpg` - Handled Home
 
 ## Video Requirements
 
@@ -34,45 +54,48 @@ Place poster images (video thumbnails) in `/public/images/posters/` with the fol
 - **Format**: MP4 (H.264 codec)
 - **Resolution**: 1920x1080 or 1280x720
 - **Aspect Ratio**: 16:9
-- **Duration**: 10-30 seconds recommended
-- **File Size**: Keep under 5MB for optimal performance
+- **Duration**: 10-30 seconds (keeps file size manageable)
+- **File Size**: Under 10MB per video (Blob free tier is generous)
 
 ### Optimization Tips
-- Use a tool like HandBrake to compress videos
-- Lower bitrate for web (2-4 Mbps is usually sufficient)
+- Use [HandBrake](https://handbrake.fr/) to compress videos
+- Target bitrate: 2-4 Mbps for web
 - Consider 720p instead of 1080p to reduce file size
+- Remove audio track if not needed
 
-## Poster Image Requirements
+## Poster Images (Optional)
 
-### Recommended Specs
-- **Format**: JPG (or WebP for better compression)
-- **Resolution**: 1920x1080 (matches video aspect ratio)
-- **Aspect Ratio**: 16:9
-- **File Size**: Keep under 200KB
+Poster images serve as thumbnails before videos load. Place them in `/public/images/posters/`:
 
-### How to Create Poster Images
-1. Export a frame from your video at an interesting moment
-2. Use an image editor to optimize for web
-3. Save as high-quality JPG
+- `car-mart.png`
+- `follett.png`
+- `jcpenney.png`
+- `walmart-infosec.jpg`
+- `walmart-themis.png`
+- `walmart-luminate.png`
+- `handled-home.png`
 
-## Performance Features
-
-The ProjectVideo component includes:
-- **Lazy Loading**: Videos only load when they enter the viewport
-- **Intersection Observer**: Triggers 50px before entering view
-- **Hover to Play**: Videos play on mouse hover, pause on mouse leave
-- **Fallback Colors**: If video/poster fails to load, shows the original color
-- **Progressive Enhancement**: Shows poster image first, then loads video
+Poster specs:
+- **Format**: JPG or PNG
+- **Resolution**: 1920x1080
+- **File Size**: Under 200KB
 
 ## Fallback Colors
 
-If a video or poster image is missing, these fallback colors will display:
+If a video or poster fails to load, these fallback colors display:
 
 - America's Car Mart: `#2563EB` (blue)
-- Computer Care: `#333333` (dark gray)
-- Follett Corporation: `#B48140` (bronze/gold)
+- Follett Corporation: `#204A65` (teal/blue)
 - JCPenney: `#E5E5E5` (light gray)
 - Walmart Information Security: `#1F2937` (dark slate)
 - Walmart Legal Themis: `#1D4ED8` (blue)
 - Walmart Data Ventures Luminate: `#E5E5E5` (light gray)
 - Handled Home: `#F97316` (orange)
+
+## Performance Features
+
+The `ProjectVideo` and `ProjectCard` components include:
+- **Lazy Loading**: Videos load only when entering viewport
+- **Intersection Observer**: Triggers 50px before view
+- **Hover to Play**: Videos play on hover (in modal they autoplay)
+- **Fallback System**: Graceful degradation to poster → color
