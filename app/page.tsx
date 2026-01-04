@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { ContactModal } from "@/components/contact-modal"
 import { LinkedInButton } from "@/components/linkedin-button"
 import { ProjectCard } from "@/components/project-card"
+import { FeaturedProjectCard } from "@/components/featured-project-card"
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -38,26 +39,38 @@ export default function HomePage() {
 
       {/* Case Studies */}
 
-      {/* Selected Works */}
+      {/* Featured Case Study */}
       <section className="py-20 px-6 bg-background border-t border-border/50">
         <div className="max-w-6xl mx-auto">
+          <FeaturedProjectCard
+            title="America's Car-Mart"
+            subtitle="Unified Payments Platform · Principal UX Architect · 2025"
+            outcome="Launched a zero-to-one payments platform in four months—on a timeline leadership said couldn't be done—achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience."
+            metrics={[
+              { value: "200%", label: "Autopay increase" },
+              { value: "15%", label: "Portal growth" },
+              { value: "4 mo", label: "Delivery time" },
+              { value: "100K+", label: "Customers" },
+            ]}
+            videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.mp4"
+            posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
+            fallbackColor="#2563EB"
+            caseStudyLink="/case-studies/enterprise-payments-platform"
+          />
+        </div>
+      </section>
+
+      {/* Selected Works */}
+      <section className="py-20 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-12 animate-slide-up">
-            <h2 className="text-3xl font-display mb-2 tracking-tight text-left">Recent Projects</h2>
+            <h2 className="text-3xl font-display mb-2 tracking-tight text-left">More Projects</h2>
             <p className="text-lg text-muted-foreground text-left">
               To learn more about any project and see a case study, reach out on LinkedIn or contact me.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* America's Car Mart */}
-            <ProjectCard
-              title="America's Car Mart"
-              description="UX Research | Team Leadership"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.mp4"
-              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/car-mart.png"
-              fallbackColor="#2563EB"
-            />
-
             {/* Follett Corporation */}
             <ProjectCard
               title="Follett Corporation"

@@ -23,38 +23,3 @@
 
 **CTA:** Read Full Case Study
 
----
-
-### JCPenney
-
-**Project Title:** JCPenney
-**Subtitle:** Point of Sale Redesign
-
-**Card Headline:** Getting checkout off the counter and onto the sales floor
-
-**Card Description:** Transformed 20-year-old point-of-sale system into modern, omnichannel experience across 31+ stores with mobile checkout capabilities.
-
-**Key Metrics:**
-- $6.2M savings
-- 50% faster checkout
-
-**CTA:** Read Full Case Study
-
----
-
-## Combined Impact Section
-
-**Heading:** Combined Impact
-
-**Description:** Strategic UX leadership delivering measurable business value across enterprise transformations
-
-### Impact Metrics
-
-**$6.2M+**
-Total cost savings delivered
-
-**100K+**
-Users impacted across projects
-
-**2**
-Fortune 500 transformations led

@@ -5,9 +5,8 @@ This folder contains all the text content from the portfolio website, organized 
 ## Files
 
 - **`homepage.md`** - Homepage content including hero section, project list, and Let's Connect section
-- **`case-studies.md`** - Case studies index page with project cards and combined impact metrics
-- **`car-mart-payments.md`** - Full America's Car-Mart case study content
-- **`jcpenney-pos.md`** - Full JCPenney POS case study content
+- **`case-studies.md`** - Case studies index page with project cards
+- **`car-mart.md`** - America's Car-Mart enterprise payments platform case study (concise version)
 
 ## How to Use
 
@@ -29,8 +28,7 @@ This folder contains all the text content from the portfolio website, organized 
 
 - `homepage.md` → `app/page.tsx`
 - `case-studies.md` → `app/case-studies/page.tsx`
-- `car-mart-payments.md` → `app/case-studies/car-mart-payments/page.tsx`
-- `jcpenney-pos.md` → `app/case-studies/jcpenney-pos/page.tsx`
+- `car-mart.md` → `app/case-studies/enterprise-payments-platform/page.tsx`
 
 ## Last Updated
 

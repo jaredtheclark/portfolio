@@ -47,9 +47,8 @@ app/
 ├── page.tsx                # Homepage with hero, metrics, case studies
 ├── globals.css             # Tailwind imports and design tokens
 └── case-studies/
-    ├── page.tsx            # Case studies index
-    ├── car-mart-payments/  # Individual case study
-    └── jcpenney-pos/       # Individual case study
+    ├── page.tsx                        # Case studies index
+    └── enterprise-payments-platform/   # Individual case study
 
 components/
 ├── navigation.tsx          # Global navigation with client-side routing
@@ -169,7 +168,7 @@ Each case study follows a Principal-Level Portfolio Template structure:
 
 **Adding New Case Studies**:
 1. Create new directory: `app/case-studies/[project-slug]/page.tsx`
-2. Follow existing structure (see car-mart-payments or jcpenney-pos)
+2. Follow existing structure (see enterprise-payments-platform)
 3. Update `app/case-studies/page.tsx` to include new project card
 4. Update `app/page.tsx` if featuring on homepage
 5. Use placeholder images: `/placeholder.svg?height=X&width=Y&query=description`
