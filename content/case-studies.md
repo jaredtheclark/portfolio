@@ -22,4 +22,3 @@
 - 100K+ customers
 
 **CTA:** Read Full Case Study
-
