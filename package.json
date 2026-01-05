@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@babel/core": "latest",
     "@expo/dom-webview": "latest",
     "@expo/metro-runtime": "latest",
     "@hookform/resolvers": "^3.10.0",
