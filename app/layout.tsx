@@ -6,19 +6,18 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
 
-import { Golos_Text, Poppins as V0_Font_Poppins, Roboto_Mono } from 'next/font/google'
-
 const golosText = Golos_Text({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-golos-text",
 })
 
-const poppins = V0_Font_Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-poppins",
-})
+import { Golos_Text, Roboto_Mono, Poppins, IBM_Plex_Serif as V0_Font_IBM_Plex_Serif, Space_Mono as V0_Font_Space_Mono, Space_Grotesk as V0_Font_Space_Grotesk } from 'next/font/google'
+
+// Initialize fonts
+const _ibmPlexSerif = V0_Font_IBM_Plex_Serif({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700"] })
+const _spaceMono = V0_Font_Space_Mono({ subsets: ['latin'], weight: ["400","700"] })
+const _spaceGrotesk = V0_Font_Space_Grotesk({ subsets: ['latin'], weight: ["300","400","500","600","700"] })
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -26,10 +25,16 @@ const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
 })
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+})
+
 export const metadata: Metadata = {
   title: "Jared Clark | Principal Product Designer",
   description: "Principal UX Product Designer specializing in enterprise fintech transformation.",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
