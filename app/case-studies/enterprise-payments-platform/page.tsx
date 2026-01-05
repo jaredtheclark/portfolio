@@ -20,12 +20,6 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
       {/* Hero Section */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <Button variant="ghost" size="sm" asChild className="mb-6">
-            <Link href="/case-studies">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Case Studies
-            </Link>
-          </Button>
 
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">
