@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    // Only ignore during builds if needed for deployment hotfixes
-    ignoreDuringBuilds: false,
-  },
   typescript: {
     // Catch type errors during build for better code quality
     ignoreBuildErrors: false,
@@ -21,10 +17,7 @@ const nextConfig = {
       }
     ],
   },
-  experimental: {
-    reactCompiler: true,
-  },
-  swcMinify: true,
+  reactCompiler: true,
   reactStrictMode: true,
 }
 
