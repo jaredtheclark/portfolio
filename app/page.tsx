@@ -8,7 +8,7 @@ import { ContactModal } from "@/components/contact-modal"
 import { LinkedInButton } from "@/components/linkedin-button"
 import { ProjectCard } from "@/components/project-card"
 import { FeaturedProjectCard } from "@/components/featured-project-card"
-import { AdditionalWorks } from "@/components/additional-works"
+
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -129,8 +129,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Additional Works */}
-      <AdditionalWorks />
 
       {/* Say Hello */}
       <section className="py-20 px-6 border-t border-border-50">
