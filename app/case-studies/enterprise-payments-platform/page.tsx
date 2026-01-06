@@ -247,7 +247,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
       <section className="py-6 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6 tracking-tight">What They Said</h2>
-          <div className="relative bg-[#e3e1d7] rounded-[32px] p-8">
+          <div className="relative bg-card rounded-[32px] p-8">
             {/* Opening Quote Mark - Top Left */}
             <svg
               className="absolute -left-8 -top-4 w-16 h-16 text-muted-foreground/30"
