@@ -42,12 +42,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Case Study */}
+      {/* Featured Case Studies */}
       <section className="py-20 px-6 bg-background border-t border-border/50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto space-y-12">
           <FeaturedProjectCard
-            title="America's Car-Mart"
-            subtitle="Unified Payments Platform · Principal UX Architect · 2025"
+            title="Enterprise Payments Platform"
+            subtitle="America's Car-Mart · Principal UX Architect · 2025"
             outcome="Launched a zero-to-one payments platform in four months achieving 200% increase in autopay enrollment while blocking a C-level directive that would have broken the customer experience."
             metrics={[
               { value: "200%", label: "Autopay increase" },
@@ -59,8 +59,23 @@ export default function HomePage() {
             fallbackColor="#2563EB"
             caseStudyLink="/case-studies/enterprise-payments-platform"
           />
+
+          <FeaturedProjectCard
+            title="Next Generation Point of Sale"
+            subtitle="JCPenney · Senior UX Designer · 2022"
+            outcome="Led UI design and design system creation for a national retailer's complete POS overhaul—from 20-year-old registers to mobile-first checkout across 650+ stores."
+            metrics={[
+              { value: "$6.2M", label: "Hardware savings" },
+              { value: "86", label: "Jobs discovered" },
+              { value: "31+", label: "Stores launched" },
+              { value: "4 mo", label: "Research to handoff" },
+            ]}
+            imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
+            fallbackColor="#E5E5E5"
+            caseStudyLink="/case-studies/point-of-sale"
+          />
         </div>
-      </section>
+      </section> 
 
       {/* Selected Works */}
       <section className="py-20 px-6 bg-background">
@@ -80,15 +95,6 @@ export default function HomePage() {
               videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
               posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
               fallbackColor="#204A65"
-            />
-
-            {/* JCPenney */}
-            <ProjectCard
-              title="JCPenney"
-              description="Design Systems | Point of Sale"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.mp4"
-              posterSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/jcpenney.png"
-              fallbackColor="#E5E5E5"
             />
 
             {/* Walmart Information Security */}

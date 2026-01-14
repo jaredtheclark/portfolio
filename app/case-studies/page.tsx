@@ -20,7 +20,7 @@ export default function CaseStudiesPage() {
       {/* Case Studies Grid */}
       <section className="py-0 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
             {/* America's Car-Mart Case Study */}
             <Card className="overflow-hidden">
               <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
@@ -56,6 +56,46 @@ export default function CaseStudiesPage() {
 
                 <Button asChild className="w-full">
                   <Link href="/case-studies/enterprise-payments-platform">
+                    Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* JCPenney Point of Sale Case Study */}
+            <Card className="overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-primary mb-2">JCPenney</h3>
+                  <p className="text-muted-foreground">Next Generation POS</p>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <CardTitle className="text-xl mb-2">
+                      Modernizing 20-year-old registers to mobile-first checkout
+                    </CardTitle>
+                    <CardDescription>
+                      Led UI design and design system creation for a national retailer's complete POS overhaul across 650+ stores.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">$6.2M hardware savings</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">86 jobs discovered</span>
+                  </div>
+                </div>
+
+                <Button asChild className="w-full">
+                  <Link href="/case-studies/point-of-sale">
                     Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
