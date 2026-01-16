@@ -31,6 +31,17 @@ export default function HomePage() {
             <Button size="lg" asChild>
               <a href="/case-studies">View Case Studies</a>
             </Button>
+
+            <Button variant="outline" size="lg" asChild className="group">
+              <a
+                href="/resume"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition-all duration-300 ease-out"
+              >
+                Resume
+              </a>
+            </Button>
+
           </div>
         </div>
       </section>
