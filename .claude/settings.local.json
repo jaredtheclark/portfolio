@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "mcp__figma__get_design_context",
-      "mcp__figma__get_screenshot"
+      "mcp__figma__get_screenshot",
+      "Bash(cat:*)",
+      "Bash(tr:*)"
     ]
   }
 }
