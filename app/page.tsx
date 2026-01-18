@@ -72,11 +72,11 @@ function SnapshotCard({
           </div>
         )}
       </div>
-      <div className="overflow-hidden rounded-[4.8px]">
+      <div className="overflow-hidden rounded-[4.8px] aspect-[16/10]">
         <img
           src={imageSrc}
           alt={`${title} project preview`}
-          className="w-full h-[315px] object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
