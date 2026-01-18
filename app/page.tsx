@@ -106,7 +106,7 @@ export default function HomePage() {
                   I help teams solve the right problems, make strategic decisions, and ship design systems that scale.
                 </p>
               </div>
-              <p className="text-base md:text-lg lg:text-xl font-mono text-muted-foreground leading-6 lg:leading-7">
+              <p className="text-xs md:text-lg font-mono text-muted-foreground leading-6 lg:leading-7">
                 Design Systems | AI + Code | Design Strategy | UX Research
               </p>
             </div>
