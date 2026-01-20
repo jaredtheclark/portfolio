@@ -229,7 +229,7 @@ export default function PointOfSaleCaseStudy() {
           </div>
 
           {/* UI Screens Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
             <div className="bg-card rounded-lg overflow-hidden shadow-sm">
               <img
                 src="https://www.figma.com/api/mcp/asset/52255e92-b62f-4537-8f7e-72dabe7d6c4b"
@@ -258,7 +258,7 @@ export default function PointOfSaleCaseStudy() {
                 className="w-full h-auto"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
@@ -286,13 +286,13 @@ export default function PointOfSaleCaseStudy() {
               </p>
 
               {/* Device Mockup */}
-              <div className="my-6 flex justify-center">
+              {/* <div className="my-6 flex justify-center">
                 <img
                   src="https://www.figma.com/api/mcp/asset/52255e92-b62f-4537-8f7e-72dabe7d6c4b"
                   alt="ELO M60 mobile POS device showing the main menu interface with responsive layout"
                   className="max-w-sm w-full h-auto rounded-lg shadow-lg"
                 />
-              </div>
+              </div> */}
 
               <p className="text-lg leading-relaxed text-muted-foreground">
                 On the floor, associates could scan items, look up inventory, and even complete transactions. At the dock, the M60 screen flipped to face customers for signature capture and payment input while associates used the larger display for complex operations like returns and exchanges.
