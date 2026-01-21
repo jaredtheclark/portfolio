@@ -199,7 +199,7 @@ export default function HomePage() {
             <img
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
               alt="JCPenney POS device in hand"
-              className="w-full max-w-[300px] lg:max-w-[373px] lg:w-[373px] h-auto"
+              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px] h-auto"
             />
           </div>
 
@@ -254,7 +254,7 @@ export default function HomePage() {
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
           {/* Content */}
-          <div className="flex-1 py-8 lg:py-10 flex flex-col gap-2 order-1">
+          <div className="flex-1 py-8 lg:py-32 flex flex-col gap-2 order-1">
             <div className="flex flex-col gap-4 mb-2">
               <span className="inline-flex w-fit px-2 py-[3px] text-xs font-medium border border-muted-foreground rounded-lg bg-white/10">
                 Case Study
