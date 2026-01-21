@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
+import { GrainCanvas } from "@/components/GrainCanvas"
 
 import "./globals.css"
 
@@ -45,6 +46,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
+        <GrainCanvas
+          options={{
+            opacity: 5,
+            speed: 72,
+            isActive: true,
+            placement: 'background',
+            animated: true,
+            grainSize: 50,
+            animateOnScroll: true,
+            animateOnMouseMove: true,
+            noiseColor: '#F4F2EC',
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
