@@ -62,14 +62,17 @@ function SnapshotCard({
   isLocked?: boolean
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
+    setIsHovered(true)
     if (videoRef.current) {
       videoRef.current.play()
     }
   }
 
   const handleMouseLeave = () => {
+    setIsHovered(false)
     if (videoRef.current) {
       videoRef.current.pause()
       videoRef.current.currentTime = 0
@@ -90,14 +93,13 @@ function SnapshotCard({
         )}
       </div>
       <div
-        className="overflow-hidden rounded-[4.8px] aspect-[16/10]"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className="overflow-hidden rounded-[4.8px] aspect-[16/10] relative"
+        onMouseEnter={videoSrc ? handleMouseEnter : undefined}
+        onMouseLeave={videoSrc ? handleMouseLeave : undefined}
       >
-        {videoSrc ? (
+        {videoSrc && (
           <video
             ref={videoRef}
-            poster={imageSrc}
             muted
             loop
             playsInline
@@ -105,13 +107,16 @@ function SnapshotCard({
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
-        ) : (
-          <img
-            src={imageSrc}
-            alt={`${title} project preview`}
-            className="w-full h-full object-cover"
-          />
         )}
+        <img
+          src={imageSrc}
+          alt={`${title} project preview`}
+          className={`w-full h-full object-cover ${
+            videoSrc
+              ? `absolute inset-0 transition-opacity duration-200 ${isHovered ? 'opacity-0 ease-out' : 'opacity-100 ease-in'}`
+              : ''
+          }`}
+        />
       </div>
     </div>
   )
@@ -330,7 +335,7 @@ export default function HomePage() {
               title="Follett Corporation"
               description="Service Design | Point of Sale"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
+              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
             />
 
             {/* Walmart Information Security */}
@@ -347,7 +352,7 @@ export default function HomePage() {
               title="Walmart Legal Themis"
               description="User Interface | Prototyping"
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.png"
-              videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
+              // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/walmart-themis.mp4"
               isLocked={true}
             />
 
