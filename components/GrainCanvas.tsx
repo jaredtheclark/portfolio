@@ -189,11 +189,14 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       animationRef.current = null;
     }
 
-    // Start animation if animated, otherwise generate once
+    // Always generate initial frame on mount
+    if (options.isActive) {
+      generateNoise(ctx, canvas.width, canvas.height);
+    }
+
+    // Start animation if animated
     if (options.animated && options.isActive) {
       animationRef.current = requestAnimationFrame(animate);
-    } else if (options.isActive) {
-      generateNoise(ctx, canvas.width, canvas.height);
     }
 
     return () => {
