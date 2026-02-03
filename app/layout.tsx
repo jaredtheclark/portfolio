@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { GrainCanvas } from "@/components/GrainCanvas"
+import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg"
 
 import "./globals.css"
 
@@ -68,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
+        <ConsoleEasterEgg />
         <GrainCanvas
           options={{
             opacity: 5,
