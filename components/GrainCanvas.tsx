@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 
 export interface GrainCanvasOptions {
   opacity: number; // 0-100
@@ -18,6 +18,16 @@ interface GrainCanvasProps {
   options: GrainCanvasOptions;
 }
 
+// Detect mobile/touch devices
+function isMobileDevice(): boolean {
+  if (typeof window === 'undefined') return false;
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  );
+}
+
 export function GrainCanvas({ options }: GrainCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -28,10 +38,20 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
   const isMouseMovingRef = useRef(false);
   const mouseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Keep options ref in sync
+  // Disable animation on mobile devices to prevent flashing issues
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    optionsRef.current = options;
-  }, [options]);
+    setIsMobile(isMobileDevice());
+  }, []);
+
+  // Effective animated state - disabled on mobile
+  const isAnimated = options.animated && !isMobile;
+
+  // Keep options ref in sync (with mobile override)
+  useEffect(() => {
+    optionsRef.current = { ...options, animated: isAnimated };
+  }, [options, isAnimated]);
 
   const hexToRgb = (hex: string): { r: number; g: number; b: number } => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -108,7 +128,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
 
   // Handle scroll detection
   useEffect(() => {
-    if (!options.animateOnScroll || !options.animated) return;
+    if (!options.animateOnScroll || !isAnimated) return;
 
     const handleScroll = () => {
       isScrollingRef.current = true;
@@ -121,7 +141,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       // Set timeout to stop animation after scrolling stops
       scrollTimeoutRef.current = setTimeout(() => {
         isScrollingRef.current = false;
-      }, 150); // Animation continues for 150ms after scroll stops
+      }, 150);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -132,11 +152,11 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, [options.animateOnScroll, options.animated]);
+  }, [options.animateOnScroll, isAnimated]);
 
   // Handle mouse movement detection
   useEffect(() => {
-    if (!options.animateOnMouseMove || !options.animated) return;
+    if (!options.animateOnMouseMove || !isAnimated) return;
 
     const handleMouseMove = () => {
       isMouseMovingRef.current = true;
@@ -149,7 +169,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       // Set timeout to stop animation after mouse stops moving
       mouseTimeoutRef.current = setTimeout(() => {
         isMouseMovingRef.current = false;
-      }, 150); // Animation continues for 150ms after mouse stops
+      }, 150);
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -160,7 +180,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
         clearTimeout(mouseTimeoutRef.current);
       }
     };
-  }, [options.animateOnMouseMove, options.animated]);
+  }, [options.animateOnMouseMove, isAnimated]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -174,7 +194,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       canvas.width = window.innerWidth / scale;
       canvas.height = window.innerHeight / scale;
 
-      // If static, generate noise immediately after resize
+      // If static (or mobile), generate noise immediately after resize
       if (!optionsRef.current.animated && optionsRef.current.isActive) {
         generateNoise(ctx, canvas.width, canvas.height);
       }
@@ -194,8 +214,8 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       generateNoise(ctx, canvas.width, canvas.height);
     }
 
-    // Start animation if animated
-    if (options.animated && options.isActive) {
+    // Start animation if animated (disabled on mobile)
+    if (isAnimated && options.isActive) {
       animationRef.current = requestAnimationFrame(animate);
     }
 
@@ -205,7 +225,7 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [animate, generateNoise, options.animated, options.isActive, options.grainSize]);
+  }, [animate, generateNoise, isAnimated, options.isActive, options.grainSize]);
 
   // Check for reduced motion preference
   const prefersReducedMotion = typeof window !== 'undefined'
