@@ -144,7 +144,7 @@ export default function PointOfSaleCaseStudy() {
         <div className="max-w-[1296px] mx-auto grid grid-cols-4 auto-rows-min lg:grid-cols-12 col-gap-1 row-gap-0">
           {/* Content Column */}
           <div className="col-span-3 lg:col-span-7 flex flex-col gap-4 py-8 md:pb-0 relative">
-            <h1 className="text-2xl md:text-5xl font-medium leading-[1.2] md:leading-[48px] tracking-tight md:tracking-normal text-[#2d2a26]">
+            <h1 className="text-2xl md:text-5xl font-medium leading-[1.2] md:leading-[56px] tracking-tight md:tracking-normal text-[#2d2a26]">
               Designing the Future of Retail Checkout
             </h1>
             <p className="text-sm md:text-lg text-[#5c5853] leading-[1.5] md:leading-7">
