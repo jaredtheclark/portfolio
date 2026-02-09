@@ -61,8 +61,8 @@ const CONTEXT_CARDS = [
 function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col">
-      <span className="text-[30px] font-semibold leading-[36px] text-[#2d2a26]">{value}</span>
-      <span className="text-sm text-[#5c5853] leading-5">{label}</span>
+      <span className="text-[30px] font-semibold leading-[36px] text-foreground">{value}</span>
+      <span className="text-sm text-muted-foreground leading-5">{label}</span>
     </div>
   )
 }
@@ -71,8 +71,8 @@ function Metric({ value, label }: { value: string; label: string }) {
 function SectionHeading({ label, title, className }: { label: string; title: string; className?: string }) {
   return (
     <div className={cn("flex flex-col gap-1", className)}>
-      <span className="text-xs font-medium text-[#737373] tracking-[0.18px] leading-[1.5] uppercase">{label}</span>
-      <h2 className="text-xl md:text-[30px] font-semibold leading-[1.2] md:leading-[36px] tracking-tight text-[#2d2a26]">{title}</h2>
+      <span className="text-xs font-medium text-label tracking-[0.18px] leading-[1.5] uppercase">{label}</span>
+      <h2 className="text-xl md:text-[30px] font-semibold leading-[1.2] md:leading-[36px] tracking-tight text-foreground">{title}</h2>
     </div>
   )
 }
@@ -91,15 +91,15 @@ function ContextCard({
 }) {
   return (
     <div className={cn(
-      "bg-[#fbfaf7] border border-[#d9d9d9] rounded-2xl p-4 flex flex-col gap-2 md:gap-4 justify-end",
+      "bg-card border border-border rounded-2xl p-4 flex flex-col gap-2 md:gap-4 justify-end",
       className
     )}>
       <img src={icon} alt="" className="w-6 h-6" aria-hidden="true" />
       <div className="flex flex-col gap-2">
-        <h3 className="text-base md:text-2xl font-normal leading-6 md:leading-[30px] text-[#404040]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
+        <h3 className="text-base md:text-2xl font-normal leading-6 md:leading-[30px] text-foreground/80" style={{ fontFamily: "'Golos Text', sans-serif" }}>
           {title}
         </h3>
-        <p className="text-base text-[#5c5853] leading-6">{description}</p>
+        <p className="text-base text-muted-foreground leading-6">{description}</p>
       </div>
     </div>
   )
@@ -133,24 +133,24 @@ export default function PointOfSaleCaseStudy() {
   }, [])
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(90deg, #f4f2ec 0%, #f4f2ec 100%), linear-gradient(90deg, #fff 0%, #fff 100%)" }}>
+    <div className="min-h-screen" style={{ background: "linear-gradient(90deg, var(--gradient-page-start) 0%, var(--gradient-page-start) 100%), linear-gradient(90deg, #fff 0%, #fff 100%)" }}>
       <Navigation />
 
       {/* Hero Section - Outcomes */}
       <section
         className="px-4 md:px-[72px] py-14 md:py-[88px]"
-        style={{ background: "linear-gradient(to bottom, #f4f2ec 0%, rgba(255,255,255,0.4) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, var(--gradient-page-start) 0%, var(--gradient-page-end) 100%)" }}
       >
         <div className="max-w-[1296px] mx-auto grid grid-cols-4 auto-rows-min lg:grid-cols-12 col-gap-1 row-gap-0">
           {/* Content Column */}
           <div className="col-span-3 lg:col-span-7 flex flex-col gap-4 py-8 md:pb-0 relative">
-            <h1 className="text-2xl md:text-5xl font-medium leading-[1.2] md:leading-[56px] tracking-tight md:tracking-normal text-[#2d2a26]">
+            <h1 className="text-2xl md:text-5xl font-medium leading-[1.2] md:leading-[56px] tracking-tight md:tracking-normal text-foreground">
               Designing the Future of Retail Checkout
             </h1>
-            <p className="text-sm md:text-lg text-[#5c5853] leading-[1.5] md:leading-7">
+            <p className="text-sm md:text-lg text-muted-foreground leading-[1.5] md:leading-7">
               Senior UX Designer · 2022
             </p>
-            <p className="text-sm md:text-base text-[#2d2a26] leading-5 md:leading-6 max-w-[770px] pr-0 md:pr-[72px]">
+            <p className="text-sm md:text-base text-foreground leading-5 md:leading-6 max-w-[770px] pr-0 md:pr-[72px]">
               Point of Sale service and design system creation for a national retailer. Our team transformed JCPenney's point of sale software, hardware, and network infrastructure supporting a mobile-first checkout experience launched across 650+ stores.
             </p>
 
@@ -210,7 +210,7 @@ export default function PointOfSaleCaseStudy() {
       {/* Challenge Section - Problems */}
       <section
         className="px-4 md:px-[72px] py-8 md:py-24"
-        style={{ background: "rgba(255,255,255,0.4)" }}
+        style={{ background: "var(--gradient-section-light)" }}
       >
         <div className="max-w-[1296px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-24 lg:items-center">
           {/* Image Collage */}
@@ -219,17 +219,17 @@ export default function PointOfSaleCaseStudy() {
             <img
               src={ASSETS.images.register02}
               alt="JCPenney associate at register during research visit"
-              className="absolute rounded-lg shadow-[0px_2px_44px_0px_rgba(0,0,0,0.1)] object-cover w-[182px] h-[102px] left-[24px] top-[43px] lg:w-[326px] lg:h-[183px] lg:left-[6px] lg:top-0"
+              className="absolute rounded-lg shadow-float object-cover w-[182px] h-[102px] left-[24px] top-[43px] lg:w-[326px] lg:h-[183px] lg:left-[6px] lg:top-0"
             />
             <img
               src={ASSETS.images.register01}
               alt="Point of sale terminal during field observation"
-              className="absolute rounded-lg shadow-[0px_2px_44px_0px_rgba(0,0,0,0.1)] object-cover w-[199px] h-[149px] left-[170px] top-0 lg:w-[246px] lg:h-[184px] lg:left-[318px] lg:top-[101px]"
+              className="absolute rounded-lg shadow-float object-cover w-[199px] h-[149px] left-[170px] top-0 lg:w-[246px] lg:h-[184px] lg:left-[318px] lg:top-[101px]"
             />
             <img
               src={ASSETS.images.register03}
               alt="Contextual inquiry session at JCPenney store"
-              className="absolute rounded-lg shadow-[0px_2px_44px_0px_rgba(0,0,0,0.1)] object-cover w-[114px] h-[78px] left-[145px] top-[128px] lg:w-[208px] lg:h-[132px] lg:left-[140px] lg:top-[168px]"
+              className="absolute rounded-lg shadow-float object-cover w-[114px] h-[78px] left-[145px] top-[128px] lg:w-[208px] lg:h-[132px] lg:left-[140px] lg:top-[168px]"
             />
           </div>
 
@@ -237,23 +237,23 @@ export default function PointOfSaleCaseStudy() {
           <div className="flex-none lg:flex-1 flex flex-col gap-6 py-4">
             <SectionHeading label="Challenge" title="Understanding 86 Ways to Do a Job" />
 
-            <div className="text-base text-[#5c5853] leading-6">
+            <div className="text-base text-muted-foreground leading-6">
               <p className="mb-4">
                 Field research surfaced consistent patterns where small interaction failures were compounding into significant operational drag.
               </p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
                 <li>
-                  <span className="font-medium text-[#5c5853]">Do This Every Time</span>
+                  <span className="font-medium text-muted-foreground">Do This Every Time</span>
                   <br />
                   Rewards prompts fired before cashiers finished scanning items
                 </li>
                 <li>
-                  <span className="font-medium text-[#5c5853]">Can&apos;t Go Back</span>
+                  <span className="font-medium text-muted-foreground">Can&apos;t Go Back</span>
                   <br />
                   Tender selection entered associates into a forced flow navigation
                 </li>
                 <li>
-                  <span className="font-medium text-[#5c5853]">Do it My Own Way</span>
+                  <span className="font-medium text-muted-foreground">Do it My Own Way</span>
                   <br />
                   Most associates defaulted to manual entry and workarounds
                 </li>
@@ -267,7 +267,7 @@ export default function PointOfSaleCaseStudy() {
       </section>
 
       {/* Context Section - Goals */}
-      <section className="px-4 md:px-[72px] py-10 md:py-12 bg-white/40">
+      <section className="px-4 md:px-[72px] py-10 md:py-12" style={{ background: "var(--gradient-section-light)" }}>
         <div className="max-w-[1296px] mx-auto flex flex-col gap-6">
           <SectionHeading label="Context" title="New Point of Sale, Familiar Goals" />
 
@@ -311,18 +311,18 @@ export default function PointOfSaleCaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="px-4 md:px-[72px] py-8 md:py-6 bg-white/60 border-t border-b border-[#e9e8e7]">
+      <section className="px-4 md:px-[72px] py-8 md:py-6 border-t border-b border-section-border" style={{ background: "var(--gradient-section-medium)" }}>
         <div className="max-w-[1296px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Content */}
           <div className="flex flex-col gap-6 py-8 md:py-20">
             <SectionHeading label="Solution" title="A Scalable, System-Aligned POS Platform" />
 
-            <div className="text-lg text-[#5c5853] leading-[29.25px]">
+            <div className="text-lg text-muted-foreground leading-[29.25px]">
               <p className="mb-4">
                 JCPenney needed a design system to power mobile checkout, complex retail workflows, and future in-store products.
               </p>
               <p className="mb-4">
-                I built the design system and point of sale application in Figma from the ground up, tokens to page components. 
+                I built the design system and point of sale application in Figma from the ground up, tokens to page components.
               </p>
               <p>
                 This became the foundation of JCPenney&apos;s digital products. UX leadership at JCP highlighted its depth, responsiveness, and technical rigor calling out how seamlessly it integrated the brand, system logic, and future product needs.
@@ -350,7 +350,7 @@ export default function PointOfSaleCaseStudy() {
       <section className="px-4 md:px-[72px] py-8 md:py-[72px] pb-12 md:pb-24">
         <div className="max-w-[1296px] mx-auto flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 lg:items-center">
           {/* Tablet Image */}
-          <div className="flex-1 overflow-hidden rounded-3xl lg:rounded-[32px] shadow-[0px_4px_40px_0px_rgba(179,172,152,0.26)] h-[284px] lg:h-[409px]">
+          <div className="flex-1 overflow-hidden rounded-3xl lg:rounded-[32px] shadow-warm h-[284px] lg:h-[409px]">
             <img
               src={ASSETS.images.tablet}
               alt="JCPenney point of sale interface on tablet device"
@@ -362,7 +362,7 @@ export default function PointOfSaleCaseStudy() {
           <div className="flex-1 flex flex-col gap-4">
             <SectionHeading label="Iterations" title="Meeting Customers Where They Are" />
 
-            <div className="text-lg text-[#5c5853] leading-[29.25px]">
+            <div className="text-lg text-muted-foreground leading-[29.25px]">
               <p className="mb-4">
                 Associates need to complete fast transactions on the sales floor and migrate to the register if additional hardware is needed.
               </p>
@@ -375,13 +375,13 @@ export default function PointOfSaleCaseStudy() {
       </section>
 
       {/* Learnings + Testimonial Section */}
-      <section className="border-t border-b border-[#e9e8e7] flex flex-col lg:flex-row">
+      <section className="border-t border-b border-section-border flex flex-col lg:flex-row">
         {/* Learnings */}
-        <div className="flex-1 px-4 md:px-[72px] py-8 md:py-[88px] bg-white/60">
+        <div className="flex-1 px-4 md:px-[72px] py-8 md:py-[88px]" style={{ background: "var(--gradient-section-medium)" }}>
           <div className="max-w-[1296px] mx-auto flex flex-col gap-6">
             <SectionHeading label="Learnings" title="Reflection" />
 
-            <div className="text-lg text-[#5c5853] leading-[29.25px]">
+            <div className="text-lg text-muted-foreground leading-[29.25px]">
               <p className="mb-4">
                 This project reinforced the value of research serving as the connective tissue between a business, its systems, and its users. The 86 jobs-to-be-done became a shared language that guided priorities, tradeoffs, and success metrics across teams.
               </p>
@@ -398,17 +398,17 @@ export default function PointOfSaleCaseStudy() {
             <SectionHeading label="Testimonial" title="Client Feedback" />
 
             <div className="flex flex-col gap-4 pr-0 md:pr-10">
-              <blockquote className="text-lg text-[#2d2a26] leading-[29.25px]">
+              <blockquote className="text-lg text-foreground leading-[29.25px]">
                 Kitestring was a strategic partner in shaping JCPenney&apos;s next-generation store technology, modernizing both checkout systems and the customer and associate experience. Their strong UI/UX capabilities drove major improvements in core checkout workflows and specialty areas like Jewelry and Salon, helping bring our transformation roadmap to life.
               </blockquote>
-              <p className="text-sm font-medium text-[#2d2a26]">
+              <p className="text-sm font-medium text-foreground">
                 — Irfan Butt, Director, JCPenney
               </p>
             </div>
 
             {/* Decorative quote mark */}
             <svg
-              className="absolute right-[108px] bottom-6 w-[71px] h-[57px] text-[#d9d9d9] hidden md:block"
+              className="absolute right-[108px] bottom-6 w-[71px] h-[57px] text-border hidden md:block"
               viewBox="0 0 71 57"
               fill="currentColor"
               aria-hidden="true"
