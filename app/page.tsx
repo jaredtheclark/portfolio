@@ -193,7 +193,7 @@ export default function HomePage() {
           {/* Photo - Hidden on mobile, shows on tablet+ */}
           <div className="hidden md:flex flex-shrink-0 justify-end order-2 lg:order-2">
             <div
-              className="w-[124px] h-[200px] lg:w-[200px] lg:h-[320px] rounded-[1.5em] overflow-hidden bg-accent"
+              className="w-[124px] h-[200px] lg:w-[200px] lg:h-[320px] rounded-2xl overflow-hidden bg-accent"
               style={{
                 boxShadow: "32.867px 38.533px 68.34px 9.067px rgba(40, 60, 16, 0.24)"
               }}

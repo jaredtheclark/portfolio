@@ -70,7 +70,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ConsoleEasterEgg />
-        <GrainCanvas
+        {/* Fixed animated grain (currently commented for testing static version) */}
+        {/* <GrainCanvas
           options={{
             opacity: 5,
             speed: 72,
@@ -81,10 +82,28 @@ export default function RootLayout({
             animateOnScroll: true,
             animateOnMouseMove: true,
             noiseColor: '#F4F2EC',
+            position: 'fixed',
           }}
-        />
+        /> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Suspense fallback={null}>{children}</Suspense>
+          <div className="relative">
+            {/* Static grain that scrolls with content */}
+            <GrainCanvas
+              options={{
+                opacity: 5,
+                speed: 72,
+                isActive: true,
+                placement: 'background',
+                animated: false,
+                grainSize: 50,
+                animateOnScroll: false,
+                animateOnMouseMove: false,
+                noiseColor: '#F4F2EC',
+                position: 'absolute',
+              }}
+            />
+            <Suspense fallback={null}>{children}</Suspense>
+          </div>
           <Analytics />
         </ThemeProvider>
       </body>

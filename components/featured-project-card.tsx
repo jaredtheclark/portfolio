@@ -22,7 +22,7 @@ export function FeaturedProjectCard({
   caseStudyLink,
 }: FeaturedProjectCardProps) {
   return (
-    <div className="w-full rounded-[2em] border border-border/50 bg-card overflow-hidden animate-fade-in">
+    <div className="w-full rounded-2xl border border-border/50 bg-card overflow-hidden animate-fade-in">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
         {/* Image Preview */}
         <div className="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden">

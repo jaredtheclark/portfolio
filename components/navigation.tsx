@@ -5,7 +5,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-// import { ThemeToggle } from "@/components/theme-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { ContactModal } from "@/components/contact-modal"
 
 function Logo() {
@@ -59,7 +59,7 @@ export function Navigation() {
               Resumé
             </Link>
 
-            {/* <ThemeToggle /> */}
+            <ThemeToggle />
 
             {/* <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
               Contact

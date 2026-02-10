@@ -12,6 +12,7 @@ export interface GrainCanvasOptions {
   animateOnScroll: boolean; // only animate during scroll
   animateOnMouseMove: boolean; // only animate during mouse movement
   noiseColor: string; // hex color to tint the noise
+  position?: 'fixed' | 'absolute'; // fixed stays in viewport, absolute scrolls with content
 }
 
 interface GrainCanvasProps {
@@ -191,8 +192,18 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
       // Calculate scale based on grain size
       // grainSize 1 = fine grain (scale 0.2), grainSize 100 = large grain (scale 2.0)
       const scale = 0.2 + (optionsRef.current.grainSize / 100) * 1.8;
-      canvas.width = window.innerWidth / scale;
-      canvas.height = window.innerHeight / scale;
+
+      // For absolute positioning, use document dimensions (includes scroll area)
+      // For fixed positioning, use viewport dimensions
+      const width = optionsRef.current.position === 'absolute'
+        ? Math.max(document.documentElement.scrollWidth, window.innerWidth)
+        : window.innerWidth;
+      const height = optionsRef.current.position === 'absolute'
+        ? Math.max(document.documentElement.scrollHeight, window.innerHeight)
+        : window.innerHeight;
+
+      canvas.width = width / scale;
+      canvas.height = height / scale;
 
       // If static (or mobile), generate noise immediately after resize
       if (!optionsRef.current.animated && optionsRef.current.isActive) {
@@ -202,6 +213,15 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
 
     handleResize();
     window.addEventListener('resize', handleResize);
+
+    // For absolute positioned canvas, observe document body size changes
+    let resizeObserver: ResizeObserver | null = null;
+    if (optionsRef.current.position === 'absolute') {
+      resizeObserver = new ResizeObserver(() => {
+        handleResize();
+      });
+      resizeObserver.observe(document.body);
+    }
 
     // Cancel any existing animation
     if (animationRef.current) {
@@ -221,11 +241,14 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [animate, generateNoise, isAnimated, options.isActive, options.grainSize]);
+  }, [animate, generateNoise, isAnimated, options.isActive, options.grainSize, options.position]);
 
   // Check for reduced motion preference
   const prefersReducedMotion = typeof window !== 'undefined'
@@ -235,10 +258,12 @@ export function GrainCanvas({ options }: GrainCanvasProps) {
     return null;
   }
 
+  const positionClass = options.position === 'absolute' ? 'absolute' : 'fixed';
+
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none"
+      className={`${positionClass} inset-0 w-full h-full pointer-events-none`}
       style={{
         zIndex: options.placement === 'overlay' ? 9999 : 51,
         opacity: options.opacity / 100,

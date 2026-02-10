@@ -6,7 +6,7 @@
 :root {
   --background: oklch(0.9601 0.0082 91.48);
   --foreground: oklch(0.2868 0.0084 75.2489);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(0.9829 0.0048 88.6);
   --card-foreground: oklch(0.2868 0.0084 75.2489);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.2868 0.0084 75.2489);
@@ -36,7 +36,10 @@
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3776 0.0100 73.5967);
   --sidebar-ring: oklch(0.6611 0.1160 185.9407);
-  --radius: 0.3rem;
+  /* New semantic tokens */
+  --label: oklch(0.5 0 0);
+  --section-border: oklch(0.92 0.004 75);
+  --radius: 0.5rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
   --shadow-blur: 8px;
@@ -51,6 +54,9 @@
   --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 4px 6px -3px hsl(0 0% 0% / 0.10);
   --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.10), 0px 8px 10px -3px hsl(0 0% 0% / 0.10);
   --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.25);
+  /* Semantic shadow variants */
+  --shadow-float: 0px 2px 44px 0px rgba(0, 0, 0, 0.1);
+  --shadow-warm: 0px 4px 40px 0px rgba(179, 172, 152, 0.26);
   --tracking-normal: normal;
   --spacing: 0.25rem;
   /* Gradient variables for section backgrounds */
@@ -61,6 +67,11 @@
   --gradient-case-study-overlay: rgba(252, 252, 251, 0.7);
   --gradient-snapshots-start: rgba(252, 252, 251, 0.4);
   --footer-overlay-opacity: 0.6;
+  /* Page/section background gradients for case studies */
+  --gradient-page-start: #f4f2ec;
+  --gradient-page-end: rgba(255, 255, 255, 0.4);
+  --gradient-section-light: rgba(255, 255, 255, 0.4);
+  --gradient-section-medium: rgba(255, 255, 255, 0.6);
 }
 
 .dark {
@@ -96,7 +107,10 @@
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3317 0.0089 67.5123);
   --sidebar-ring: oklch(0.6611 0.1160 185.9407);
-  --radius: 0.3rem;
+  /* New semantic tokens - dark mode */
+  --label: oklch(0.6 0 0);
+  --section-border: oklch(0.3 0.01 140);
+  --radius: 0.5rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
   --shadow-blur: 8px;
@@ -111,6 +125,9 @@
   --shadow-lg: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 4px 6px -3px hsl(0 0% 0% / 0.20);
   --shadow-xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.20), 0px 8px 10px -3px hsl(0 0% 0% / 0.20);
   --shadow-2xl: 0px 4px 8px -2px hsl(0 0% 0% / 0.50);
+  /* Semantic shadow variants - dark mode */
+  --shadow-float: 0px 2px 44px 0px rgba(0, 0, 0, 0.3);
+  --shadow-warm: 0px 4px 40px 0px rgba(0, 0, 0, 0.4);
   /* Dark mode gradient variables - customize these for your dark theme */
   --gradient-hero-start: rgba(255, 255, 255, 0.02);
   --gradient-hero-end: rgba(255, 255, 255, 0.05);
@@ -119,6 +136,11 @@
   --gradient-case-study-overlay: rgba(255, 255, 255, 0.05);
   --gradient-snapshots-start: rgba(255, 255, 255, 0.03);
   --footer-overlay-opacity: 0.5;
+  /* Page/section background gradients for case studies - dark mode */
+  --gradient-page-start: oklch(0.18 0.04 140);
+  --gradient-page-end: rgba(0, 0, 0, 0.4);
+  --gradient-section-light: rgba(255, 255, 255, 0.05);
+  --gradient-section-medium: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -154,6 +176,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* New semantic color tokens */
+  --color-label: var(--label);
+  --color-section-border: var(--section-border);
 
   --font-sans: var(--font-golos-text), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-poppins), 'Poppins', system-ui, sans-serif;
@@ -173,6 +198,9 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+  /* Semantic shadow variants */
+  --shadow-float: var(--shadow-float);
+  --shadow-warm: var(--shadow-warm);
 
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
