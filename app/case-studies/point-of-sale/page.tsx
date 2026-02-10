@@ -33,27 +33,27 @@ const CONTEXT_CARDS = [
   {
     icon: ASSETS.icons.fasterFlow,
     title: "Faster Checkout Flow",
-    description: "How might we remove interruptions and irreversible steps to keep transactions moving without restarts?",
+    description: "We should remove interruptions and irreversible steps to keep transactions moving without restarts.",
   },
   {
     icon: ASSETS.icons.errorProof,
     title: "Error-Proof Tendering",
-    description: "How might we design a tender flow that prevents mistakes instead of punishing them?",
+    description: "The tendering flow should prevent mistakes instead of punishing them.",
   },
   {
     icon: ASSETS.icons.dailyClose,
     title: "Reliable Daily Close",
-    description: "How might we streamline end-of-day reconciliation to reduce errors and manager overhead?",
+    description: "Streamline end-of-day reconciliation to reduce errors and manager overhead.",
   },
   {
     icon: ASSETS.icons.mobileFirst,
     title: "Mobile-First Selling",
-    description: "How might we enable associates to complete full transactions on the floor without returning to the register?",
+    description: "Enable associates to complete full transactions on the floor without returning to the register.",
   },
   {
     icon: ASSETS.icons.systemTrust,
     title: "System Trust & Stability",
-    description: "How might we reduce system crashes and slow-downs that erode associate confidence?",
+    description: "Reduce system crashes and slow-downs that erode associate confidence.",
   },
 ]
 
