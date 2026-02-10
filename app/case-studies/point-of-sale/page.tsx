@@ -1,17 +1,18 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { LetsConnect } from "@/components/lets-connect"
 import { ContactModal } from "@/components/contact-modal"
 import { Footer } from "@/components/footer"
+import { SplineSolution } from "@/components/spline-solution"
+import { SplineHero } from "@/components/spline-hero"
 import { cn } from "@/lib/utils"
 
 // Asset URLs
 const ASSETS = {
   videos: {
     heroPhone: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-find-order-3d.mp4",
-    solution: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-customer%2Bassociate-3d.mp4",
   },
   images: {
     register01: "https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/case-study_jcp/jcp-onsite-register-01.jpg",
@@ -33,27 +34,27 @@ const CONTEXT_CARDS = [
   {
     icon: ASSETS.icons.fasterFlow,
     title: "Faster Checkout Flow",
-    description: "How might we remove interruptions and irreversible steps to keep transactions moving without restarts?",
+    description: "We should remove interruptions and irreversible steps to keep transactions moving without restarts.",
   },
   {
     icon: ASSETS.icons.errorProof,
     title: "Error-Proof Tendering",
-    description: "How might we design a tender flow that prevents mistakes instead of punishing them?",
+    description: "The tendering flow should prevent mistakes instead of punishing them.",
   },
   {
     icon: ASSETS.icons.dailyClose,
     title: "Reliable Daily Close",
-    description: "How might we streamline end-of-day reconciliation to reduce errors and manager overhead?",
+    description: "Streamline end-of-day reconciliation to reduce errors and manager overhead.",
   },
   {
     icon: ASSETS.icons.mobileFirst,
     title: "Mobile-First Selling",
-    description: "How might we enable associates to complete full transactions on the floor without returning to the register?",
+    description: "Enable associates to complete full transactions on the floor without returning to the register.",
   },
   {
     icon: ASSETS.icons.systemTrust,
     title: "System Trust & Stability",
-    description: "How might we reduce system crashes and slow-downs that erode associate confidence?",
+    description: "Reduce system crashes and slow-downs that erode associate confidence.",
   },
 ]
 
@@ -61,8 +62,8 @@ const CONTEXT_CARDS = [
 function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div className="flex flex-col">
-      <span className="text-[30px] font-semibold leading-[36px] text-foreground">{value}</span>
-      <span className="text-sm text-muted-foreground leading-5">{label}</span>
+      <span className="font-medium text-[24px] leading-[1.2] tracking-[-0.48px] text-foreground" style={{ fontFamily: "'Poppins', sans-serif" }}>{value}</span>
+      <span className="text-[14px] font-normal text-muted-foreground leading-[1.5] tracking-[0.07px]" style={{ fontFamily: "'Golos Text', sans-serif" }}>{label}</span>
     </div>
   )
 }
@@ -107,30 +108,6 @@ function ContextCard({
 
 export default function PointOfSaleCaseStudy() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-  const heroVideoRef = useRef<HTMLVideoElement>(null)
-  const solutionVideoRef = useRef<HTMLVideoElement>(null)
-
-  // Video autoplay on scroll
-  useEffect(() => {
-    const videos = [heroVideoRef.current, solutionVideoRef.current].filter(Boolean) as HTMLVideoElement[]
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target as HTMLVideoElement
-          if (entry.isIntersecting) {
-            video.play()
-          } else {
-            video.pause()
-          }
-        })
-      },
-      { threshold: 0.5 }
-    )
-
-    videos.forEach(video => observer.observe(video))
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(90deg, var(--gradient-page-start) 0%, var(--gradient-page-start) 100%), linear-gradient(90deg, #fff 0%, #fff 100%)" }}>
@@ -159,40 +136,28 @@ export default function PointOfSaleCaseStudy() {
        
           
 
-          {/* Mobile Video Column */}
+          {/* Mobile Spline/Video Column */}
           <div className="col-span-1 row-span-2 flex py-8 items-start justify-end lg:hidden">
-            <div className="w-[89px] h-[192px] md:w-auto md:h-auto">
-              <video
-                ref={heroVideoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-contain"
-              >
-                <source src={ASSETS.videos.heroPhone} type="video/mp4" />
-              </video>
+            <div className="w-[120px] h-[260px]">
+              <SplineHero
+                fallbackVideoSrc={ASSETS.videos.heroPhone}
+                className="w-full h-full"
+              />
             </div>
           </div>
 
-          {/* Desktop Video Column */}
-          <div className="hidden lg:flex col-span-4 col-start-9 items-center justify-center relative">
-            <div className="relative w-[377px] h-[327px]">
+          {/* Desktop Spline/Video Column */}
+          <div className="hidden lg:flex col-span-4 col-start-9 row-span-2 items-center justify-center relative">
+            <div className="relative w-[400px] h-[450px]">
               {/* Decorative ellipse background */}
               <div
-                className="absolute w-[246px] h-[398px] left-[98px] top-[-15px] rounded-full opacity-20"
+                className="absolute w-[246px] h-[398px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20"
                 style={{ background: "radial-gradient(circle, rgba(179,172,152,0.4) 0%, transparent 70%)" }}
               />
-              <video
-                ref={heroVideoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute left-[75px] top-[-19px] w-[183px] h-[395px] object-contain z-10"
-              >
-                <source src={ASSETS.videos.heroPhone} type="video/mp4" />
-              </video>
+              <SplineHero
+                fallbackVideoSrc={ASSETS.videos.heroPhone}
+                className="w-full h-full z-10"
+              />
             </div>
           </div>
 
@@ -330,18 +295,9 @@ export default function PointOfSaleCaseStudy() {
             </div>
           </div>
 
-          {/* Video */}
-          <div className="flex items-center justify-center h-[277px] lg:h-[509px]">
-            <video
-              ref={solutionVideoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-[296px] lg:w-[544px] h-full object-contain"
-            >
-              <source src={ASSETS.videos.solution} type="video/mp4" />
-            </video>
+          {/* Spline 3D Scene */}
+          <div className="flex items-center justify-center">
+            <SplineSolution className="w-[296px] h-[277px] lg:w-[544px] lg:h-[509px]" />
           </div>
         </div>
       </section>
