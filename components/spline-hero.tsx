@@ -44,7 +44,9 @@ export function SplineHero({ fallbackVideoSrc, className }: SplineHeroProps) {
   const [useSpline, setUseSpline] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+  const [containerReady, setContainerReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   // Check device capabilities on mount
   useEffect(() => {
@@ -53,6 +55,28 @@ export function SplineHero({ fallbackVideoSrc, className }: SplineHeroProps) {
       setIsLoading(false)
     }
   }, [])
+
+  // Withhold Spline until container has non-zero dimensions.
+  // Prevents WebGL framebuffer errors when the instance is hidden via display:none.
+  useEffect(() => {
+    if (!useSpline) return
+
+    const el = containerRef.current
+    if (!el) return
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect
+        if (width > 0 && height > 0) {
+          setContainerReady(true)
+          observer.disconnect()
+        }
+      }
+    })
+
+    observer.observe(el)
+    return () => { observer.disconnect() }
+  }, [useSpline])
 
   const handleSplineLoad = () => {
     setIsLoading(false)
@@ -81,17 +105,19 @@ export function SplineHero({ fallbackVideoSrc, className }: SplineHeroProps) {
   }
 
   return (
-    <div className={`${className} pointer-events-none relative overflow-hidden`}>
+    <div ref={containerRef} className={`${className} pointer-events-none relative overflow-hidden`}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-8 h-8 border-2 border-muted-foreground/20 border-t-muted-foreground rounded-full animate-spin" />
         </div>
       )}
-      <Spline
-        scene="https://draft.spline.design/SQ-B52c3p0xU9hxg/scene.splinecode"
-        onLoad={handleSplineLoad}
-        onError={handleSplineError}
-      />
+      {containerReady && !hasError && (
+        <Spline
+          scene="https://draft.spline.design/SQ-B52c3p0xU9hxg/scene.splinecode"
+          onLoad={handleSplineLoad}
+          onError={handleSplineError}
+        />
+      )}
     </div>
   )
 }
