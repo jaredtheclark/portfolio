@@ -20,7 +20,7 @@ export function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="sticky top-0 z-50 px-4 md:px-6 lg:px-[144px] bg-background/80 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="py-4">
         <div className="flex items-center justify-between">
           <Link href="/" aria-label="Jared Clark – Home" className="text-foreground hover:text-primary transition-colors flex items-center gap-3">

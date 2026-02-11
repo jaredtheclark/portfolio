@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { GrainCanvas } from "@/components/GrainCanvas"
 import { ConsoleEasterEgg } from "@/components/ConsoleEasterEgg"
 
@@ -104,6 +105,7 @@ export default function RootLayout({
             />
             <Suspense fallback={null}>{children}</Suspense>
           </div>
+          <ThemeToggle />
           <Analytics />
         </ThemeProvider>
       </body>

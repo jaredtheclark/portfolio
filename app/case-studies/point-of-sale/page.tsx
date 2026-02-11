@@ -1,10 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
-import { LetsConnect } from "@/components/lets-connect"
-import { ContactModal } from "@/components/contact-modal"
+import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { SplineSolution } from "@/components/spline-solution"
 import { SplineHero } from "@/components/spline-hero"
@@ -108,8 +106,6 @@ function ContextCard({
 }
 
 export default function PointOfSaleCaseStudy() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(90deg, var(--gradient-page-start) 0%, var(--gradient-page-start) 100%), linear-gradient(90deg, #fff 0%, #fff 100%)" }}>
       <Navigation />
@@ -390,10 +386,7 @@ export default function PointOfSaleCaseStudy() {
         </div>
       </section>
 
-      {/* Let's Connect */}
-      <LetsConnect onContactClick={() => setIsContactModalOpen(true)} />
-
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
+      <ContactSection />
 
       <Footer />
     </div>

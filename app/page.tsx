@@ -1,13 +1,14 @@
 "use client"
 
+import type React from "react"
 import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
-import { ContactModal } from "@/components/contact-modal"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronsDown } from "lucide-react"
-import { LinkedInButton } from "@/components/linkedin-button"
+import { Footer } from "@/components/footer"
+import { ContactSection } from "@/components/contact-section"
 
 // Lock icon SVG component
 function LockIcon({ className }: { className?: string }) {
@@ -126,7 +127,6 @@ function SnapshotCard({
 }
 
 export default function HomePage() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const scrollToCaseStudies = () => {
     const caseStudiesSection = document.getElementById('case-studies')
@@ -438,64 +438,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Combined Let's Connect + Footer Section */}
-      <section className="relative border-t border-border overflow-hidden">
-        {/* Background graphic */}
-        <div className="absolute inset-0 z-0" role="presentation">
-          <Image
-            src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/footer-background-graphic-nYEU3AUOuyt2v1GFh54ltYu7BG9bl9.jpg"
-            alt=""
-            fill
-            className="object-cover dark:opacity-20"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0" style={{ backgroundColor: `var(--background)`, opacity: `var(--footer-overlay-opacity)` }} />
-        </div>
+      <ContactSection />
 
-        {/* Let's Connect Content */}
-        <div className="relative z-10 px-6 py-16 md:py-24 lg:py-36 max-w-6xl mx-auto">
-          <div className="flex flex-col gap-2 mb-4">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-semibold leading-tight lg:leading-10 text-foreground">
-              Let's Connect
-            </h2>
-            <div className="text-base md:text-lg text-muted-foreground leading-6 md:leading-7 pb-2">
-              <p>I'm looking for my next role building teams and shaping product strategy.</p>
-              <p>If you need a design leader who ships measurable outcomes, let's talk.</p>
-            </div>
-          </div>
+      <Footer />
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <Button
-              size="lg"
-              onClick={() => setIsContactModalOpen(true)}
-              className="cursor-pointer group w-full sm:w-auto"
-            >
-              <span className="inline-flex items-center justify-center transition-all duration-300 ease-out">
-                <span>Say Hello</span>
-                <span className="inline-block w-0 overflow-visible opacity-0 transition-all duration-300 ease-out group-hover:w-[1.25rem] group-hover:opacity-100 group-hover:ml-2 group-hover:animate-wave-in">
-                  👋
-                </span>
-              </span>
-            </Button>
-            <LinkedInButton />
-          </div>
-
-          <p className="text-sm text-muted-foreground pt-4">
-            Available for full-time and contract roles.
-          </p>
-        </div>
-
-        {/* Footer */}
-        <div className="relative z-10 px-6 py-6 md:py-10 border-t-0">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-medium text-muted-foreground tracking-wider">
-              Created with ⌨️, 🖱️, and 🤖 by 👨‍💻
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
     </div>
   )
 }

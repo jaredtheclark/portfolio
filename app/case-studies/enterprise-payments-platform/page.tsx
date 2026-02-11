@@ -1,13 +1,11 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { Navigation } from "@/components/navigation"
-import { LetsConnect } from "@/components/lets-connect"
-import { ContactModal } from "@/components/contact-modal"
+import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 export default function EnterprisePaymentsPlatformCaseStudy() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -283,10 +281,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
         </div>
       </section>
 
-      {/* Let's Connect */}
-      <LetsConnect onContactClick={() => setIsContactModalOpen(true)} />
-
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
+      <ContactSection />
 
       <Footer />
     </div>
