@@ -73,7 +73,7 @@ export function FeaturedProjectCard({
             <Button asChild size="lg" className="group">
               <Link href={caseStudyLink}>
                 Read Case Study
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </Button>
           </div>

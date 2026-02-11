@@ -185,7 +185,7 @@ export default function HomePage() {
                 className="w-full md:w-auto flex items-center justify-center gap-2 cursor-pointer"
               >
                 View Case Studies
-                <ChevronsDown className="h-4 w-4" />
+                <ChevronsDown className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -266,7 +266,7 @@ export default function HomePage() {
               <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/point-of-sale" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -316,7 +316,7 @@ export default function HomePage() {
               <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/enterprise-payments-platform" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
