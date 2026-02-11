@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { LetsConnect } from "@/components/lets-connect"
 import { ContactModal } from "@/components/contact-modal"
@@ -138,7 +139,7 @@ export default function PointOfSaleCaseStudy() {
 
           {/* Mobile Spline/Video Column */}
           <div className="col-span-1 row-span-2 flex py-8 items-start justify-end lg:hidden">
-            <div className="w-[120px] h-[260px]">
+            <div className="w-[140px] h-[340px]">
               <SplineHero
                 fallbackVideoSrc={ASSETS.videos.heroPhone}
                 className="w-full h-full"
@@ -165,7 +166,7 @@ export default function PointOfSaleCaseStudy() {
             <div className="row-span-2 col-span-4 md:col-span-3 lg:col-span-7 grid grid-cols-2 auto-rows-min md:grid-cols-4 gap-4 md:gap-6 mt-2">
               <Metric value="$6.2M" label="Hardware savings" />
               <Metric value="86" label="Workflows redesigned" />
-              <Metric value="31+" label="Stores launched" />
+              <Metric value="650+" label="Stores launched" />
               <Metric value="4 mo" label="Research to handoff" />
             </div>
 
@@ -181,21 +182,33 @@ export default function PointOfSaleCaseStudy() {
           {/* Image Collage */}
           <div className="flex-none lg:flex-1 relative h-[206px] lg:h-[300px] w-full lg:pr-[100px]">
             {/* Desktop positioning */}
-            <img
-              src={ASSETS.images.register02}
-              alt="JCPenney associate at register during research visit"
-              className="absolute rounded-lg shadow-float object-cover w-[182px] h-[102px] left-[24px] top-[43px] lg:w-[326px] lg:h-[183px] lg:left-[6px] lg:top-0"
-            />
-            <img
-              src={ASSETS.images.register01}
-              alt="Point of sale terminal during field observation"
-              className="absolute rounded-lg shadow-float object-cover w-[199px] h-[149px] left-[170px] top-0 lg:w-[246px] lg:h-[184px] lg:left-[318px] lg:top-[101px]"
-            />
-            <img
-              src={ASSETS.images.register03}
-              alt="Contextual inquiry session at JCPenney store"
-              className="absolute rounded-lg shadow-float object-cover w-[114px] h-[78px] left-[145px] top-[128px] lg:w-[208px] lg:h-[132px] lg:left-[140px] lg:top-[168px]"
-            />
+            <div className="absolute rounded-lg shadow-float overflow-hidden w-[182px] h-[102px] left-[24px] top-[43px] lg:w-[326px] lg:h-[183px] lg:left-[6px] lg:top-0">
+              <Image
+                src={ASSETS.images.register02}
+                alt="JCPenney associate at register during research visit"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 182px, 326px"
+              />
+            </div>
+            <div className="absolute rounded-lg shadow-float overflow-hidden w-[199px] h-[149px] left-[170px] top-0 lg:w-[246px] lg:h-[184px] lg:left-[318px] lg:top-[101px]">
+              <Image
+                src={ASSETS.images.register01}
+                alt="Point of sale terminal during field observation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 199px, 246px"
+              />
+            </div>
+            <div className="absolute rounded-lg shadow-float overflow-hidden w-[114px] h-[78px] left-[145px] top-[128px] lg:w-[208px] lg:h-[132px] lg:left-[140px] lg:top-[168px]">
+              <Image
+                src={ASSETS.images.register03}
+                alt="Contextual inquiry session at JCPenney store"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 114px, 208px"
+              />
+            </div>
           </div>
 
           {/* Content */}
@@ -276,7 +289,7 @@ export default function PointOfSaleCaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="px-4 md:px-[72px] py-8 md:py-6 border-t border-b border-section-border" style={{ background: "var(--gradient-section-medium)" }}>
+      <section className="px-4 md:px-[72px] py-8 md:py-6 border-t border-b border-section-border overflow-hidden" style={{ background: "var(--gradient-section-medium)" }}>
         <div className="max-w-[1296px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Content */}
           <div className="flex flex-col gap-6 py-8 md:py-20">
@@ -296,8 +309,8 @@ export default function PointOfSaleCaseStudy() {
           </div>
 
           {/* Spline 3D Scene */}
-          <div className="flex items-center justify-center">
-            <SplineSolution className="w-[296px] h-[277px] lg:w-[544px] lg:h-[509px]" />
+          <div className="flex items-center justify-center overflow-hidden">
+            <SplineSolution className="w-full h-[520px] lg:w-[544px] lg:h-[509px]" />
           </div>
         </div>
       </section>
@@ -306,11 +319,13 @@ export default function PointOfSaleCaseStudy() {
       <section className="px-4 md:px-[72px] py-8 md:py-[72px] pb-12 md:pb-24">
         <div className="max-w-[1296px] mx-auto flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 lg:items-center">
           {/* Tablet Image */}
-          <div className="flex-1 overflow-hidden rounded-3xl lg:rounded-[32px] shadow-warm h-[284px] lg:h-[409px]">
-            <img
+          <div className="flex-1 relative overflow-hidden rounded-3xl lg:rounded-[32px] shadow-warm h-[284px] lg:h-[409px]" style={{ minHeight: '284px' }}>
+            <Image
               src={ASSETS.images.tablet}
               alt="JCPenney point of sale interface on tablet device"
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 

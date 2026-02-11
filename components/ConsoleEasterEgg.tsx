@@ -25,7 +25,7 @@ export function ConsoleEasterEgg() {
     // Console styling
     console.log(
       '%c' + asciiArt,
-      'color: #00D9FF; font-family: monospace; font-size: 10px; line-height: 1.2;'
+      'color: #FF8C42; font-family: monospace; font-size: 10px; line-height: 1.2;'
     )
 
     // console.log(

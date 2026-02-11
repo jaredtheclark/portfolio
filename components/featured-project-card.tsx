@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "./ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -27,10 +28,12 @@ export function FeaturedProjectCard({
         {/* Image Preview */}
         <div className="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden">
           {imageSrc ? (
-            <img
+            <Image
               src={imageSrc}
               alt={`${title} project preview`}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           ) : (
             <div
@@ -73,7 +76,7 @@ export function FeaturedProjectCard({
             <Button asChild size="lg" className="group">
               <Link href={caseStudyLink}>
                 Read Case Study
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </Button>
           </div>

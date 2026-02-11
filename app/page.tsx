@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { ContactModal } from "@/components/contact-modal"
 import { Button } from "@/components/ui/button"
@@ -108,14 +109,16 @@ function SnapshotCard({
             <source src={videoSrc} type="video/mp4" />
           </video>
         )}
-        <img
+        <Image
           src={imageSrc}
           alt={`${title} project preview`}
-          className={`w-full h-full object-cover ${
+          fill
+          className={`object-cover ${
             videoSrc
               ? `absolute inset-0 transition-opacity duration-200 ${isHovered ? 'opacity-0 ease-out' : 'opacity-100 ease-in'}`
               : ''
           }`}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>
@@ -153,15 +156,18 @@ export default function HomePage() {
           <div className="flex-1 flex flex-col gap-6 lg:gap-8 lg:pb-6 order-1 relative">
             {/* Mobile headshot - absolutely positioned next to h1 */}
             <div
-              className="absolute top-[-13px] right-0 w-[48px] h-[48px] rounded-full overflow-hidden bg-accent md:hidden z-10"
+              className="absolute top-[-13px] right-0 w-[48px] h-[48px] rounded-full overflow-hidden bg-accent md:hidden z-10 relative"
               style={{
                 boxShadow: "8.813px 10.332px 18.324px 2.431px rgba(40, 60, 16, 0.32)"
               }}
             >
-              <img
+              <Image
                 src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jared-clark-product-designer-2-RJplkdew5XUkwoZCQtJHK0GnYl8unP.jpg"
                 alt="Jared Clark, Product Designer"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="48px"
+                priority
               />
             </div>
 
@@ -185,7 +191,7 @@ export default function HomePage() {
                 className="w-full md:w-auto flex items-center justify-center gap-2 cursor-pointer"
               >
                 View Case Studies
-                <ChevronsDown className="h-4 w-4" />
+                <ChevronsDown className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -193,26 +199,32 @@ export default function HomePage() {
           {/* Photo - Hidden on mobile, shows on tablet+ */}
           <div className="hidden md:flex flex-shrink-0 justify-end order-2 lg:order-2">
             <div
-              className="w-[124px] h-[200px] lg:w-[200px] lg:h-[320px] rounded-2xl overflow-hidden bg-accent"
+              className="w-[124px] h-[200px] lg:w-[200px] lg:h-[320px] rounded-2xl overflow-hidden bg-accent relative"
               style={{
                 boxShadow: "32.867px 38.533px 68.34px 9.067px rgba(40, 60, 16, 0.24)"
               }}
             >
-              <img
+              <Image
                 src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jared-clark-product-designer-2-RJplkdew5XUkwoZCQtJHK0GnYl8unP.jpg"
                 alt="Jared Clark, Product Designer"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 124px, 200px"
+                priority
               />
             </div>
           </div>
         </div>
 
         {/* Background Graphic - Hidden on mobile, visible on larger screens */}
-        <div className="absolute top-0 right-0 w-[400px] md:w-[542px] lg:w-[799px] h-full z-0 pointer-events-none">
-          <img
+        <div className="absolute top-0 right-0 w-[400px] md:w-[542px] lg:w-[799px] h-full z-0 pointer-events-none" aria-hidden="true">
+          <Image
             src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/background-graphic-T1CqY4VzLndX5jntYzWHQ0e2MbzKHY.svg"
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 400px, 799px"
+            priority
           />
         </div>
       </section>
@@ -228,10 +240,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-0 lg:gap-[72px]">
           {/* Image - Shows below on mobile/tablet, left on desktop */}
           <div className="flex-shrink-0 self-center lg:self-end order-2 lg:order-1">
-            <img
+            <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/jcp-m60-hand-mg65n2nH0dwVFBdfFMwssIJISNl6Pa.png"
               alt="JCPenney POS device in hand"
-              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px] h-auto"
+              width={373}
+              height={500}
+              className="w-full max-w-[200px] lg:max-w-[373px] lg:w-[373px]"
+              style={{ height: 'auto' }}
             />
           </div>
 
@@ -266,7 +281,7 @@ export default function HomePage() {
               <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/point-of-sale" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -316,7 +331,7 @@ export default function HomePage() {
               <Button variant="outline" asChild className="w-full md:w-auto border-border shadow-sm bg-white/10">
                 <Link href="/case-studies/enterprise-payments-platform" className="flex items-center justify-center gap-2">
                   Read Case Study
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -324,17 +339,21 @@ export default function HomePage() {
 
           {/* Image - Single responsive image that overflows right and bottom on desktop */}
           <div className="flex-1 flex justify-center order-2">
-            <img
+            <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/ACM-iPad-fimEV8EFeOBpxGUooPLPYfiqpQNCgU.png"
               alt="Enterprise Payments Platform interface on iPad"
+              width={909}
+              height={710}
               className="hidden lg:inline lg:left-0 top-0 lg:top-[48px] w-[417px] md:w-[500px] lg:w-[909px] xl:w-[70vw] origin-top-left lg:scale-200"
               style={{ filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))" }}
-            />   
-            <img
+            />
+            <Image
               src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/acm-ipad-mobile-qDSyOGHv3LuyZIutCftZjlgMmqcZyo.png"
               alt="Enterprise Payments Platform interface on iPad"
+              width={500}
+              height={350}
               className="lg:hidden w-[417px] md:w-[500px]"
-              style={{ filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))" }}
+              style={{ filter: "drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25))", height: 'auto' }}
             />
           </div>
 
@@ -411,11 +430,13 @@ export default function HomePage() {
       {/* Combined Let's Connect + Footer Section */}
       <section className="relative border-t border-border overflow-hidden">
         {/* Background graphic */}
-        <div className="absolute inset-0 z-0">
-          <img
+        <div className="absolute inset-0 z-0" role="presentation">
+          <Image
             src="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/homepage-images/footer-background-graphic-nYEU3AUOuyt2v1GFh54ltYu7BG9bl9.jpg"
             alt=""
-            className="w-full h-full object-cover dark:opacity-20"
+            fill
+            className="object-cover dark:opacity-20"
+            sizes="100vw"
           />
           <div className="absolute inset-0" style={{ backgroundColor: `var(--background)`, opacity: `var(--footer-overlay-opacity)` }} />
         </div>
