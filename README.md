@@ -1,113 +1,58 @@
-# Portfolio website design
+# Jared Clark — Product Design Portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+**Principal UX Product Designer** focused on business outcomes, design systems, and shipping work that moves metrics.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jared-jaredworks-projects/v0-portfolio-website-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/BReMPyEINAv)
-
-## Overview
-
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/jared-jaredworks-projects/v0-portfolio-website-design](https://vercel.com/jared-jaredworks-projects/v0-portfolio-website-design)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/projects/BReMPyEINAv](https://v0.app/chat/projects/BReMPyEINAv)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
-
-## Development Workflow
-
-### Making Local Changes
-
-This repository uses a branch-based workflow with pull requests for all changes to maintain clean git history and enable code review.
-
-#### Step 1: Create a Feature Branch
-
-```bash
-# Ensure you're on main with latest changes
-git checkout main
-git pull
-
-# Create a new branch with a descriptive name
-git checkout -b descriptive-branch-name
-```
-
-**Branch naming examples:**
-- `add-contact-form`
-- `fix-mobile-navigation`
-- `update-hero-section`
-- `refactor-case-study-layout`
-
-#### Step 2: Make Changes and Commit
-
-```bash
-# Make your code changes
-# Then stage and commit them
-git add .
-git commit -m "Descriptive commit message"
-```
-
-#### Step 3: Push and Create Pull Request
-
-```bash
-# Push your branch to GitHub
-git push -u origin descriptive-branch-name
-```
-
-Then create a pull request on GitHub to merge into `main`.
-
-#### Step 4: Clean Up After Merge
-
-After your PR is merged and you've deleted the branch on GitHub:
-
-```bash
-# Switch back to main
-git checkout main
-
-# Get the merged changes
-git pull
-
-# Remove remote branch references
-git fetch --prune
-
-# Delete your local branch
-git branch -d descriptive-branch-name
-```
-
-**Quick cleanup command:**
-```bash
-git checkout main && git pull && git fetch --prune && git branch -d branch-name
-```
-
-### Why This Workflow?
-
-- ✅ Each PR represents one clear feature or fix
-- ✅ Easy to review and understand what changed
-- ✅ Clean git history with descriptive branch names
-- ✅ Can work on multiple features in parallel
-- ✅ Easy to revert specific changes if needed
-- ✅ Branch names document your work
-
-### GitHub Desktop Alternative
-
-1. **Create branch**: Branch menu → New Branch
-2. **Switch branches**: Branch menu → Switch to Branch
-3. **Fetch updates**: Repository menu → Fetch (⌘⇧F)
-4. **Delete branch**: Branch menu → Delete → select merged branch
+Live site: **[jaredworks.design](https://vercel.com/jared-jaredworks-projects/v0-portfolio-website-design)**
 
 ---
-#### :)))
+
+## About
+
+I help teams solve the right problems, make strategic decisions, and build design systems that scale. My work sits at the intersection of product strategy, systems thinking, and hands-on execution — from early research to shipped product.
+
+Recent highlights:
+- Doubled autopay enrollment and consolidated 3 fragmented payment systems into one platform for 100K+ customers at America's Car-Mart
+- Led point-of-sale redesigns for JCPenney and Follett across retail and enterprise environments
+- Design system governance and user research at Walmart (Information Security, Legal, Data Ventures)
+
+I'm currently looking for my next role building teams and shaping product strategy. Connect on [LinkedIn](https://linkedin.com/in/jaredclark).
+
+---
+
+## Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI**: shadcn/ui + Radix UI
+- **3D**: Spline
+- **Deployment**: Vercel
+
+---
+
+## Local Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+For branching, pull requests, and git workflow, see [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
+
+---
+
+## Project Structure
+
+```
+app/
+├── page.tsx                          # Homepage
+├── case-studies/
+│   ├── page.tsx                      # Case studies index
+│   ├── enterprise-payments-platform/ # America's Car-Mart
+│   └── point-of-sale/                # JCPenney
+components/
+├── navigation.tsx
+└── ui/                               # shadcn/ui components
+```

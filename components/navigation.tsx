@@ -1,12 +1,8 @@
 "use client"
 
-import { useState } from "react"
-
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { ContactModal } from "@/components/contact-modal"
 
 function Logo() {
   return (
@@ -22,52 +18,30 @@ function Logo() {
 
 export function Navigation() {
   const pathname = usePathname()
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 px-4 md:px-6 lg:px-[72px] bg-background/80 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="py-4">
         <div className="flex items-center justify-between">
           <Link href="/" aria-label="Jared Clark – Home" className="text-foreground hover:text-primary transition-colors flex items-center gap-3">
             <Logo />
           </Link>
 
-          <div className="flex items-center gap-6">
-            {/* <Link
-              href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === "/" ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/case-studies"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname.includes("/case-studies") ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              Case Studies
-            </Link> */}
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/case-studies") ? "text-foreground" : "text-muted-foreground"}>
+              <Link href="/case-studies">Case Studies</Link>
+            </Button>
 
-            <Link
-              href="/resume"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname.includes("/resume") ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              Resumé
-            </Link>
+            <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/about") ? "text-foreground" : "text-muted-foreground"}>
+              <Link href="/about">About</Link>
+            </Button>
 
-            <ThemeToggle />
-
-            {/* <Button variant="outline" size="sm" onClick={() => setIsContactModalOpen(true)}>
-              Contact
-            </Button> */}
+            <Button variant="ghost" size="sm" asChild className={pathname.startsWith("/resume") ? "text-foreground" : "text-muted-foreground"}>
+              <Link href="/resume">Resume</Link>
+            </Button>
           </div>
         </div>
       </div>
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
     </nav>
   )
 }
