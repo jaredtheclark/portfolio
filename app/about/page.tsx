@@ -16,8 +16,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="px-4 md:px-6 lg:px-[144px] py-20 border-b border-border">
         <div className="max-w-4xl">
-          <p className="text-sm font-mono text-muted-foreground mb-4 tracking-widest uppercase">About Me</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl mb-6">
             Placeholder headline about who I am and what drives my work.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
