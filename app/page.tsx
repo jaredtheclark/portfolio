@@ -39,6 +39,37 @@ function LockIcon({ className }: { className?: string }) {
   )
 }
 
+// Recommendation card component
+function RecommendationCard({
+  name,
+  title,
+  relationship,
+  date,
+  quote,
+}: {
+  name: string
+  title: string
+  relationship: string
+  date: string
+  quote: string
+}) {
+  return (
+    <div className="flex flex-col gap-4 p-6 rounded-[4.8px] border border-border bg-white/5">
+      <p
+        className="text-base text-foreground leading-[1.6] flex-1"
+        style={{ textIndent: "-0.45em", paddingLeft: "0.45em" }}
+      >
+        &ldquo;{quote}&rdquo;
+      </p>
+      <div className="flex flex-col gap-0.5 pt-2 border-t border-border">
+        <p className="text-sm font-medium text-foreground">{name}</p>
+        <p className="text-xs font-mono text-muted-foreground">{title}</p>
+        <p className="text-xs text-muted-foreground">{relationship} &middot; {date}</p>
+      </div>
+    </div>
+  )
+}
+
 // Case study metric component
 function Metric({ value, label }: { value: string; label: string }) {
   return (
@@ -434,6 +465,81 @@ export default function HomePage() {
               imageSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.png"
               // videoSrc="https://dvrudj0acuc9axhx.public.blob.vercel-storage.com/Homepage%20Videos/follett.mp4"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Recommendations Section */}
+      <section className="py-20 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col gap-2 mb-12">
+            <h2 className="text-[30px] font-heading font-semibold leading-none tracking-[-0.3px] text-foreground">
+              Recommendations
+            </h2>
+            <p className="text-base text-muted-foreground max-w-[604px]">
+              What colleagues, managers, and clients have said about working with me.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <RecommendationCard
+              name="John Whitman"
+              title="Product Owner | Operator | Strategist | People Leader"
+              relationship="Managed Jared directly"
+              date="October 2025"
+              quote="Jared brought exceptional strategic thinking and technical expertise to this complex project. They architected an end-to-end experience that balanced user needs with business requirements and technical constraints, ensuring our system was both intuitive and scalable. What set Jared apart was their collaborative approach. They worked seamlessly across all teams—Business Analysts, Product Design, UX, Quality Assurance and Development—making complex UX concepts accessible to all stakeholders and maintaining alignment throughout the project."
+            />
+            <RecommendationCard
+              name="Corey Campbell"
+              title="Director of Product Strategy & Design at Fleet Enable"
+              relationship="Managed Jared directly"
+              date="July 2022"
+              quote="Jared is an exceptional visual designer and has robust experience in digital product design, design systems, branding, and even data visualization best practices. He amplifies this experience with strong familiarity in CSS and HTML as well as React, making his ability to collaborate with engineering a breeze. His eye for well balanced design aesthetic takes his execution to the next level and sets him apart as a best in class UI designer. I would highly recommend Jared for a Digital Product Design leadership position due to his deep experience across many industries in B2B, B2C, Enterprise, Startup, etc."
+            />
+            <RecommendationCard
+              name="Hiba Murali"
+              title="Senior Product Designer @ Document Crunch"
+              relationship="Same team"
+              date="July 2022"
+              quote="Jared is an amazingly dedicated and sharp colleague! He demonstrated the ability to break down complex feature requests into clean and intuitive designs that sparked delight and excitement from stakeholders, and was able to communicate design ideas in a highly effective way. Besides his top-notch design skills and genuine desire to do whatever it took to make the client happy, he also brought a sense of enthusiasm and camaraderie to the team. He is truly an excellent designer and an excellent human being!"
+            />
+            <RecommendationCard
+              name="Tom Greever"
+              title="VP of Product Design & Research, AI-first marketplaces and SaaS"
+              relationship="Client"
+              date="April 2020"
+              quote="Jared was the lead designer on a project that I oversaw—it was a great experience working with him and I hope we have the opportunity to work together again. He is one of those rare designers who is talented at both visual design, as well as some of the more technical aspects of design that require knowledge of coding. He was not afraid to dabble in code-heavy environments, was an excellent champion for design systems, and always delivered quality work. He is kind, articulate, funny, and genuine."
+            />
+            <RecommendationCard
+              name="Kathleen Radecki"
+              title="Community Leader & Maker of Products that Help People"
+              relationship="Different teams"
+              date="September 2023"
+              quote="Jared possesses a remarkable ability to generate innovative ideas promptly and readily collaborate with both development and product teams to ensure our products align with customer usability goals and business objectives. His collaborative nature made working with him a seamless experience, and I have no reservations about working with Jared again on future projects. If you're seeking assistance in designing a new product, Jared is undoubtedly the right choice for the job!"
+            />
+            <RecommendationCard
+              name="Charles Gugino"
+              title="Business + Tech · TPM @ RaiseRight"
+              relationship="Senior to Jared"
+              date="September 2022"
+              quote="Jared makes work fun and he gets it done. He was a key reason a 0-1 startup went from concept to launch & revenue in 5 months (Bonus: It exited 2 years later). He has great ideas, he's fun to work with, I can't recommend him more highly."
+            />
+            <RecommendationCard
+              name="Kendall Johnson"
+              title="Senior Product Designer | AI · UX Strategy · Complex Workflows"
+              relationship="Different teams"
+              date="July 2022"
+              quote="Jared is an incredibly attentive, thorough, and passionate Product Designer. His commitment to his craft is inspiring and is evident through the work that he produces. Not only is Jared extremely talented, but he is also a lot of fun to work with and brings amazing energy. I know he is going to do really, really big things!"
+            />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <Button variant="outline" asChild className="flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/jaredclarkdesigner/details/recommendations/" target="_blank" rel="noopener noreferrer">
+                See all recommendations on LinkedIn
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
