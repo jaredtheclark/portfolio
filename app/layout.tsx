@@ -69,6 +69,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/* Figma capture script — dev only, never loads in production */}
+      {process.env.NODE_ENV === 'development' && (
+        <head><script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script></head>
+      )}
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ConsoleEasterEgg />
         {/* Fixed animated grain (currently commented for testing static version) */}
