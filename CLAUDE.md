@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a portfolio website for a Principal UX Product Designer, built with Next.js 14 and deployed on Vercel. The project is automatically synced with v0.app deployments and uses modern React patterns with TypeScript.
+This is a portfolio website for a Principal UX Product Designer, built with Next.js and deployed on Vercel. The project is automatically synced with v0.app deployments and uses modern React patterns with TypeScript.
 
 **Important**: This repository is automatically synced from v0.app. Any changes made to deployed apps on v0.app will be automatically pushed to this repository.
 
@@ -243,6 +243,12 @@ export const metadata: Metadata = {
 - Focus states visible (cyan ring via Tailwind defaults)
 - Keyboard navigation supported
 - Screen reader text with `sr-only` class when needed
+- All interactive elements must have descriptive aria-labels or aria-labelledby
+- Use semantic HTML elements before reaching for aria roles
+- Images require meaningful alt text (or alt="" if decorative)
+- Form inputs must have associated labels
+- Ensure focus management is handled for modals and dynamic content
+- Run axe-core or similar checks before marking any UI work complete
 
 ### Development Workflow
 
