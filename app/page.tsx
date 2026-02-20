@@ -348,11 +348,9 @@ function SnapshotCard({
                   <div className="relative w-full aspect-[16/10] rounded-[4.8px] overflow-hidden">
                     {videoSrc ? (
                       <video
-                        ref={modalVideoRef}
                         muted
                         loop
                         playsInline
-                        autoPlay
                         className="w-full h-full object-cover"
                       >
                         <source src={videoSrc} type="video/mp4" />
