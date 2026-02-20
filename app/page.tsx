@@ -878,15 +878,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Follett's campus bookstore POS systems were aging and inconsistent across locations, creating friction for both store associates and students during high-volume periods like back-to-school.",
+                    body: "Follett Higher Education runs campus retail at scale: 1,000+ stores, course materials, book and software rentals, and high-volume events like pop-ups and sporting events. Their existing POS couldn't flex to meet those demands. Checkout was a bottleneck.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Conducted service design research across multiple campus locations, mapping associate workflows and student journeys. Used journey mapping and service blueprints to identify systemic failure points.",
+                    heading: "The Approach",
+                    body: "I led UI design alongside a UX researcher. We ran Jobs to be Done sessions and ORCA workshops, then I modeled Follett's operational systems as Figma objects using variables. Prototypes pulled from realistic data tied to actual use cases, giving stakeholders something to evaluate against their real workflows rather than a demo.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Delivered redesigned POS workflows and a service design blueprint adopted for Follett's next-generation store technology rollout, improving transaction speed and reducing associate training time.",
+                    heading: "The Outcome",
+                    body: "Follett selected GK Software as their new cloud-based POS provider and built on my custom UI instead of GK's default interface. The design targeted their specific rental and course materials workflows. It runs on a dockable tablet that supports additional hardware, deployed across 1,000+ stores, pop-up shops, and sporting arenas serving over six million students.",
                   },
                 ],
               }}
