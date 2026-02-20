@@ -766,15 +766,15 @@ export default function HomePage() {
                 blocks: [
                   {
                     heading: "The Challenge",
-                    body: "Security analysts were working across fragmented dashboards with inconsistent UI patterns, slowing response times and increasing cognitive load during high-stakes incidents.",
+                    body: "Walmart Global Tech's security analysts process 6 trillion data points a year across a global network of security operations centers. The internal microservice tools they used to detect and investigate threats couldn't keep up. One key scanning application gave analysts no visibility into system status; they were left refreshing pages and hunting manually for data while the clock ran on time-sensitive decisions. Walmart's Living Design System wasn't built for this class of tooling, so the team needed a different path.",
                   },
                   {
-                    heading: "Approach",
-                    body: "Conducted contextual inquiry sessions with security analysts to map workflows, identify pain points, and define a shared design language for the security tooling ecosystem.",
+                    heading: "The Approach",
+                    body: "Before opening Figma, I helped the security department work through a design system decision. I recommended Elastic UI based on the nature of their tooling, and the team adopted it. From there I embedded on the security floor, interviewed analysts about how they actually worked, scrubbed sensitive details from my notes, and synthesized findings into something actionable. I submitted product updates to Jira throughout to keep leadership aligned. Working alongside an internal designer, I anchored patterns to what SOC analysts already knew, keeping the cognitive load low. On the scanning tool, I redesigned the UI around real-time reactivity: loading states at both the page and component level, so system status was always visible without a manual refresh. I ran user testing with analysts to validate the work, then collaborated closely with a frontend and backend developer to make sure the build matched spec.",
                   },
                   {
-                    heading: "Outcome",
-                    body: "Delivered a unified component library and interaction patterns adopted across three internal security products, reducing analyst onboarding time and improving incident response workflows.",
+                    heading: "The Outcome",
+                    body: "Analysts got tools that matched the pace and precision their work actually requires: clear system feedback, less friction, and interfaces built around the workflows they already had. The design system recommendation gave the security department a foundation they can build on. The Figma deliverables were handed off at a standard internal teams could own and extend without starting over.",
                   },
                 ],
               }}
