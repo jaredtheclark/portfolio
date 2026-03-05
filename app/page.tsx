@@ -489,6 +489,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <main>
 
       {/* Hero Section */}
       <section className="relative border-b border-border overflow-hidden" style={{
@@ -962,6 +963,7 @@ export default function HomePage() {
       </section>
 
       <ContactSection />
+      </main>
 
       <Footer />
 

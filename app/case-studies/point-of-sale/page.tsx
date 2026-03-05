@@ -110,6 +110,7 @@ export default function PointOfSaleCaseStudy() {
     <div className="min-h-screen" style={{ background: "linear-gradient(90deg, var(--gradient-page-start) 0%, var(--gradient-page-start) 100%), linear-gradient(90deg, #fff 0%, #fff 100%)" }}>
       <Navigation />
 
+      <article>
       {/* Hero Section - Outcomes */}
       <section
         className="px-4 md:px-[72px] py-14 md:py-[88px]"
@@ -385,6 +386,7 @@ export default function PointOfSaleCaseStudy() {
           </div>
         </div>
       </section>
+      </article>
 
       <ContactSection />
 

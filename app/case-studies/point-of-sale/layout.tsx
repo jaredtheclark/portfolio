@@ -9,6 +9,12 @@ export const metadata: Metadata = {
     description:
       "UX case study: Redesigned retail POS experience achieving 15% increase in transaction throughput and reduced checkout friction.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Point of Sale System | Jared Clark - Product Designer",
+    description:
+      "UX case study: Redesigned retail POS experience achieving 15% increase in transaction throughput and reduced checkout friction.",
+  },
 }
 
 const jsonLd = {

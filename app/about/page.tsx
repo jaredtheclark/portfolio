@@ -4,8 +4,45 @@ import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 
 export const metadata: Metadata = {
-  title: "About Me | Principal UX Product Designer",
+  title: "About Me | Jared Clark - Product Designer",
   description: "Learn about Jared Clark, a Principal UX Product Designer with expertise in complex enterprise systems, fintech, and human-centered design.",
+  openGraph: {
+    title: "About Me | Jared Clark - Product Designer",
+    description: "Learn about Jared Clark, a Principal UX Product Designer with expertise in complex enterprise systems, fintech, and human-centered design.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Me | Jared Clark - Product Designer",
+    description: "Learn about Jared Clark, a Principal UX Product Designer with expertise in complex enterprise systems, fintech, and human-centered design.",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://jaredclark.design/#person",
+    "name": "Jared Clark",
+    "jobTitle": "Principal UX Product Designer",
+    "description": "Product Designer, Researcher, and Developer specializing in enterprise design challenges and design systems.",
+    "url": "https://jaredclark.design",
+    "sameAs": [
+      "https://www.linkedin.com/in/jaredclarkdesigner/",
+      "https://github.com/jaredtheclark"
+    ],
+    "knowsAbout": [
+      "Product Design",
+      "UX Research",
+      "Design Systems",
+      "Enterprise Software",
+      "Fintech"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kitestring Technical Services"
+    }
+  }
 }
 
 function GradientDivider() {
@@ -26,6 +63,10 @@ function GradientDivider() {
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}

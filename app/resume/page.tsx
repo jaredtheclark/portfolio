@@ -1,16 +1,80 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Download, Mail, Phone, MapPin, Linkedin, Globe } from "lucide-react"
+import { Download, Mail, MapPin, Linkedin } from "lucide-react"
 
-export const metadata = {
-  title: "Resume | Jared Clark - Principal UX Product Designer",
-  description: "View and download Jared Clark's resume - 10+ years of product design leadership experience",
+export const metadata: Metadata = {
+  title: "Resume | Jared Clark - Product Designer",
+  description: "View and download Jared Clark's resume - 10+ years of product design leadership experience in enterprise fintech and design systems.",
+  openGraph: {
+    title: "Resume | Jared Clark - Product Designer",
+    description: "View and download Jared Clark's resume - 10+ years of product design leadership experience in enterprise fintech and design systems.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resume | Jared Clark - Product Designer",
+    description: "View and download Jared Clark's resume - 10+ years of product design leadership experience in enterprise fintech and design systems.",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://jaredclark.design/#person",
+    "name": "Jared Clark",
+    "jobTitle": "Principal UX Product Designer",
+    "email": "jared@jaredclark.design",
+    "url": "https://jaredclark.design",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fayetteville",
+      "addressRegion": "AR",
+      "addressCountry": "US"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "University of Arkansas"
+    },
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Principal Product Designer",
+        "occupationLocation": {
+          "@type": "Place",
+          "name": "Remote"
+        }
+      }
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kitestring Technical Services",
+      "url": "https://kitestring.io"
+    },
+    "knowsAbout": [
+      "Jobs-to-Be-Done (JTBD)",
+      "Contextual Inquiry",
+      "User Testing",
+      "Design Systems",
+      "Figma",
+      "React",
+      "Accessibility (WCAG)"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/jaredclarkdesigner/"
+    ]
+  }
 }
 
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
 
       <section className="py-16 px-6">

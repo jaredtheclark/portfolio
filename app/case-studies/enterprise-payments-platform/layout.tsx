@@ -9,6 +9,12 @@ export const metadata: Metadata = {
     description:
       "UX case study: Designed a zero-to-one payments platform achieving 200% increase in autopay enrollment and 15% growth in active portal users.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enterprise Payments Platform | Jared Clark - Product Designer",
+    description:
+      "UX case study: Designed a zero-to-one payments platform achieving 200% increase in autopay enrollment and 15% growth in active portal users.",
+  },
 }
 
 const jsonLd = {
