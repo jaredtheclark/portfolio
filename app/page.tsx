@@ -236,6 +236,7 @@ function SnapshotCard({
               loop
               playsInline
               className="w-full h-full object-cover"
+              aria-label={`${title} demo video`}
             >
               <source src={videoSrc} type="video/mp4" />
             </video>
@@ -290,6 +291,7 @@ function SnapshotCard({
                       playsInline
                       autoPlay
                       className="w-full"
+                      aria-label={`${title} demo video`}
                     >
                       <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -352,6 +354,7 @@ function SnapshotCard({
                         loop
                         playsInline
                         className="w-full h-full object-cover"
+                        aria-label={`${title} demo video`}
                       >
                         <source src={videoSrc} type="video/mp4" />
                       </video>

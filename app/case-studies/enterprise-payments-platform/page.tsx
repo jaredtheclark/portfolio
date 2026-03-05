@@ -187,6 +187,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
                 loop
                 playsInline
                 src="/videos/acm-compare.mp4"
+                aria-label="Comparison of original vs redesigned autopay enrollment flow"
               >
                 Your browser does not support the video tag.
               </video>

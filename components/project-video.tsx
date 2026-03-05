@@ -94,6 +94,7 @@ export function ProjectVideo({ videoSrc, posterSrc, alt, fallbackColor = "#33333
           playsInline
           preload="metadata"
           onError={handleVideoError}
+          aria-label={alt}
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
