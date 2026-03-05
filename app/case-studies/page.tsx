@@ -1,11 +1,63 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { CaseStudyCard } from "@/components/case-study-card"
 
+export const metadata: Metadata = {
+  title: "Case Studies | Jared Clark - Product Designer",
+  description:
+    "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  openGraph: {
+    title: "Case Studies | Jared Clark - Product Designer",
+    description:
+      "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | Jared Clark - Product Designer",
+    description:
+      "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Case Studies",
+  "description": "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  "url": "https://jaredclark.design/case-studies",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Enterprise Payments Platform",
+        "url": "https://jaredclark.design/case-studies/enterprise-payments-platform"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Point of Sale System",
+        "url": "https://jaredclark.design/case-studies/point-of-sale"
+      }
+    ]
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://jaredclark.design/#person",
+    "name": "Jared Clark"
+  }
+}
+
 export default function CaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
 
       {/* Header */}

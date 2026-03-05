@@ -41,6 +41,7 @@ export default function NotFound() {
               playsInline
               loop
               src="/videos/404-easter-egg.mp4"
+              aria-label="Animated illustration for page not found"
             >
               Your browser does not support the video tag.
             </video>

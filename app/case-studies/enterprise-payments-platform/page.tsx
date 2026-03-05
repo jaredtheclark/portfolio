@@ -36,6 +36,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      <article>
       {/* Hero Section */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
@@ -187,6 +188,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
                 loop
                 playsInline
                 src="/videos/acm-compare.mp4"
+                aria-label="Comparison of original vs redesigned autopay enrollment flow"
               >
                 Your browser does not support the video tag.
               </video>
@@ -280,6 +282,7 @@ export default function EnterprisePaymentsPlatformCaseStudy() {
           </div>
         </div>
       </section>
+      </article>
 
       <ContactSection />
 

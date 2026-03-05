@@ -98,6 +98,7 @@ export function SplineHero({ fallbackVideoSrc, className }: SplineHeroProps) {
         loop
         playsInline
         className={className}
+        aria-label="3D animation of JCPenney point of sale device"
       >
         <source src={fallbackVideoSrc} type="video/mp4" />
       </video>

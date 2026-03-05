@@ -70,10 +70,73 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Figma capture script — dev only, never loads in production */}
-      {process.env.NODE_ENV === 'development' && (
-        <head><script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script></head>
-      )}
+      <head>
+        {/* Figma capture script — dev only, never loads in production */}
+        {process.env.NODE_ENV === 'development' && (
+          <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+        )}
+        {/* JSON-LD Structured Data for Google Sitelinks & Rich Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://jaredclark.design/#website",
+                  "name": "Jared Clark | Product Designer",
+                  "url": "https://jaredclark.design",
+                  "description": "Product Designer specializing in enterprise fintech transformation.",
+                  "publisher": {
+                    "@id": "https://jaredclark.design/#person"
+                  }
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://jaredclark.design/#person",
+                  "name": "Jared Clark",
+                  "jobTitle": "Principal UX Product Designer",
+                  "url": "https://jaredclark.design",
+                  "sameAs": [
+                    "https://www.linkedin.com/in/jaredclarkdesigner/",
+                    "https://github.com/jaredtheclark"
+                  ],
+                  "knowsAbout": [
+                    "Product Design",
+                    "UX Design",
+                    "Enterprise Software",
+                    "Fintech",
+                    "Design Systems"
+                  ]
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  "@id": "https://jaredclark.design/#navigation",
+                  "name": "Main Navigation",
+                  "hasPart": [
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Case Studies",
+                      "url": "https://jaredclark.design/case-studies"
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "About",
+                      "url": "https://jaredclark.design/about"
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Resume",
+                      "url": "https://jaredclark.design/resume"
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`font-sans ${golosText.variable} ${poppins.variable} ${robotoMono.variable}`}>
         <ConsoleEasterEgg />
         {/* Fixed animated grain (currently commented for testing static version) */}

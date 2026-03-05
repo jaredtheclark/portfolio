@@ -77,6 +77,7 @@ export function ProjectCard({
                     playsInline
                     src={videoSrc}
                     onError={() => setVideoError(true)}
+                    aria-label={`${title} demo video`}
                   >
                     <source src={videoSrc} type="video/mp4" />
                   </video>
