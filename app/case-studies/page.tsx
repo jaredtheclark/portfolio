@@ -1,7 +1,19 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { CaseStudyCard } from "@/components/case-study-card"
+
+export const metadata: Metadata = {
+  title: "Case Studies | Jared Clark - Product Designer",
+  description:
+    "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  openGraph: {
+    title: "Case Studies | Jared Clark - Product Designer",
+    description:
+      "UX case studies in enterprise fintech: payment platforms with 200% autopay growth, point-of-sale systems with 15% faster transactions.",
+  },
+}
 
 export default function CaseStudiesPage() {
   return (
