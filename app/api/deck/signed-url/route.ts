@@ -3,7 +3,7 @@ import { get } from "@vercel/blob"
 
 // This route streams the PDF from private blob storage
 // The pathname is hardcoded for security - users can't request arbitrary files
-const DECK_PATHNAME = "deck/jared-clark-product-designer.pdf"
+const DECK_PATHNAME = "Jared Clark Product Designer.pdf"
 
 export async function GET(request: NextRequest) {
   try {
