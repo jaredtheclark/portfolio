@@ -1,9 +1,95 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
 import { getAll } from "@vercel/edge-config"
+import { signDeckToken } from "@/lib/deck-auth"
+
+// Rate limiting: track failed attempts per IP
+// Map of IP -> { count: number, timestamp: number }
+const rateLimitMap = new Map<string, { count: number; timestamp: number }>()
+
+// Rate limit config
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX_ATTEMPTS = 5
+
+// Clean up old entries periodically (every 100 requests)
+let requestCount = 0
+function cleanupRateLimitMap() {
+  requestCount++
+  if (requestCount % 100 === 0) {
+    const now = Date.now()
+    for (const [ip, data] of rateLimitMap.entries()) {
+      if (now - data.timestamp > RATE_LIMIT_WINDOW_MS) {
+        rateLimitMap.delete(ip)
+      }
+    }
+  }
+}
+
+function checkRateLimit(ip: string): { allowed: boolean; retryAfter?: number } {
+  cleanupRateLimitMap()
+
+  const now = Date.now()
+  const existing = rateLimitMap.get(ip)
+
+  if (!existing) {
+    return { allowed: true }
+  }
+
+  // Reset if window has passed
+  if (now - existing.timestamp > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.delete(ip)
+    return { allowed: true }
+  }
+
+  // Check if over limit
+  if (existing.count >= RATE_LIMIT_MAX_ATTEMPTS) {
+    const retryAfter = Math.ceil(
+      (RATE_LIMIT_WINDOW_MS - (now - existing.timestamp)) / 1000
+    )
+    return { allowed: false, retryAfter }
+  }
+
+  return { allowed: true }
+}
+
+function recordFailedAttempt(ip: string) {
+  const now = Date.now()
+  const existing = rateLimitMap.get(ip)
+
+  if (!existing || now - existing.timestamp > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.set(ip, { count: 1, timestamp: now })
+  } else {
+    rateLimitMap.set(ip, { count: existing.count + 1, timestamp: existing.timestamp })
+  }
+}
+
+function clearRateLimitForIp(ip: string) {
+  rateLimitMap.delete(ip)
+}
 
 export async function POST(request: Request) {
   try {
+    // Get requester IP for rate limiting
+    const forwarded = request.headers.get("x-forwarded-for")
+    const ip = forwarded ? forwarded.split(",")[0].trim() : "unknown"
+
+    // Check rate limit
+    const rateLimitResult = checkRateLimit(ip)
+    if (!rateLimitResult.allowed) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Too many attempts. Please try again later.",
+        },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(rateLimitResult.retryAfter ?? 60),
+          },
+        }
+      )
+    }
+
     const body = await request.json()
     const { password } = body
 
@@ -31,6 +117,7 @@ export async function POST(request: Request) {
     }
 
     if (Object.keys(passwordMap).length === 0) {
+      recordFailedAttempt(ip)
       return NextResponse.json({ success: false }, { status: 401 })
     }
 
@@ -40,12 +127,15 @@ export async function POST(request: Request) {
     )?.[0]
 
     if (!matchedLabel) {
+      recordFailedAttempt(ip)
       return NextResponse.json({ success: false }, { status: 401 })
     }
 
-    // Get requester IP
-    const forwarded = request.headers.get("x-forwarded-for")
-    const ip = forwarded ? forwarded.split(",")[0].trim() : "unknown"
+    // Successful authentication - clear rate limit for this IP
+    clearRateLimitForIp(ip)
+
+    // Generate JWT token
+    const token = await signDeckToken(matchedLabel)
 
     const timestamp = new Date().toISOString()
 
@@ -79,7 +169,7 @@ export async function POST(request: Request) {
       )
     }
 
-    return NextResponse.json({ success: true, label: matchedLabel })
+    return NextResponse.json({ success: true, label: matchedLabel, token })
   } catch (error) {
     console.error("[deck-access] API route error:", error)
     return NextResponse.json(

@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { get } from "@vercel/blob"
+import { verifyDeckToken } from "@/lib/deck-auth"
 
 // This route streams the PDF from private blob storage
 // The pathname is hardcoded for security - users can't request arbitrary files
@@ -7,10 +8,26 @@ const DECK_PATHNAME = "Jared Clark Product Designer.pdf"
 
 export async function GET(request: NextRequest) {
   try {
-    // Check for valid session via custom header from client
-    const authHeader = request.headers.get("x-portfolio-auth")
-    if (authHeader !== "unlocked") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    // Extract JWT from Authorization header
+    const authHeader = request.headers.get("authorization")
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return NextResponse.json(
+        { error: "Unauthorized - missing or invalid authorization header" },
+        { status: 401 }
+      )
+    }
+
+    const token = authHeader.slice(7) // Remove "Bearer " prefix
+
+    // Verify the JWT token
+    try {
+      await verifyDeckToken(token)
+    } catch (error) {
+      console.error("[deck/signed-url] JWT verification failed:", error)
+      return NextResponse.json(
+        { error: "Unauthorized - invalid or expired token" },
+        { status: 401 }
+      )
     }
 
     // Verify blob token is configured

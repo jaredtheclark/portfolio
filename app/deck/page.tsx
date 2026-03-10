@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -10,25 +10,64 @@ import { toast } from "sonner"
 // The API endpoint that streams the PDF from private blob storage
 const PDF_API_ENDPOINT = "/api/deck/signed-url"
 
+// Session storage key for JWT token
+const TOKEN_STORAGE_KEY = "portfolio_token"
+
+// Helper to get stored token
+function getStoredToken(): string | null {
+  if (typeof window === "undefined") return null
+  return sessionStorage.getItem(TOKEN_STORAGE_KEY)
+}
+
+// Helper to store token
+function storeToken(token: string): void {
+  sessionStorage.setItem(TOKEN_STORAGE_KEY, token)
+}
+
+// Helper to clear token
+function clearToken(): void {
+  sessionStorage.removeItem(TOKEN_STORAGE_KEY)
+}
+
 export default function DeckPage() {
   const [isUnlocked, setIsUnlocked] = useState(false)
   const [password, setPassword] = useState("")
   const [pwError, setPwError] = useState(false)
+  const [pwErrorMessage, setPwErrorMessage] = useState<string | null>(null)
   const [pwLoading, setPwLoading] = useState(false)
   const [shakeKey, setShakeKey] = useState(0)
   const [showPassword, setShowPassword] = useState(false)
   const [pdfReady, setPdfReady] = useState(false)
   const [pdfError, setPdfError] = useState(false)
 
+  // Handle 401 responses by clearing token and showing password form
+  const handleUnauthorized = useCallback(() => {
+    clearToken()
+    setIsUnlocked(false)
+    setPdfReady(false)
+    setPdfError(false)
+  }, [])
+
   // Check if PDF is accessible (validate auth works with API)
-  const validatePdfAccess = async () => {
+  const validatePdfAccess = useCallback(async () => {
+    const token = getStoredToken()
+    if (!token) {
+      handleUnauthorized()
+      return
+    }
+
     try {
       const res = await fetch(PDF_API_ENDPOINT, {
         method: "GET",
         headers: {
-          "x-portfolio-auth": "unlocked",
+          Authorization: `Bearer ${token}`,
         },
       })
+
+      if (res.status === 401) {
+        handleUnauthorized()
+        return
+      }
 
       if (res.ok) {
         setPdfReady(true)
@@ -39,24 +78,25 @@ export default function DeckPage() {
     } catch {
       setPdfError(true)
     }
-  }
+  }, [handleUnauthorized])
 
   // Check for existing session on mount
   useEffect(() => {
-    if (sessionStorage.getItem("portfolio_unlocked") === "true") {
+    const token = getStoredToken()
+    if (token) {
       setIsUnlocked(true)
       validatePdfAccess()
     }
-  }, [])
+  }, [validatePdfAccess])
 
   // Dev helper to clear session
   useEffect(() => {
     if (process.env.NODE_ENV === "development") {
       (window as Window & { clearPortfolioAccess?: () => void }).clearPortfolioAccess = () => {
-        sessionStorage.removeItem("portfolio_unlocked")
+        clearToken()
         setIsUnlocked(false)
         setPdfReady(false)
-        console.log("[dev] portfolio_unlocked cleared")
+        console.log("[dev] portfolio token cleared")
       }
       console.log(
         "%c clearPortfolioAccess() %c reset portfolio session lock",
@@ -71,12 +111,14 @@ export default function DeckPage() {
 
     if (!password.trim()) {
       setPwError(true)
+      setPwErrorMessage("Please enter a password.")
       setShakeKey((k) => k + 1)
       return
     }
 
     setPwLoading(true)
     setPwError(false)
+    setPwErrorMessage(null)
 
     try {
       const res = await fetch("/api/deck-access", {
@@ -86,18 +128,36 @@ export default function DeckPage() {
       })
 
       if (res.ok) {
-        toast.success("Access granted. Thanks for checking out my case study deck!")
-        setIsUnlocked(true)
-        sessionStorage.setItem("portfolio_unlocked", "true")
-        // Validate PDF access after successful authentication
-        validatePdfAccess()
+        const data = await res.json()
+        if (data.token) {
+          storeToken(data.token)
+          toast.success("Access granted. Thanks for checking out my case study deck!")
+          setIsUnlocked(true)
+          // Validate PDF access after successful authentication
+          validatePdfAccess()
+        } else {
+          // Unexpected response - no token provided
+          setPwError(true)
+          setPwErrorMessage("Authentication error. Please try again.")
+          setShakeKey((k) => k + 1)
+          setPassword("")
+        }
+      } else if (res.status === 429) {
+        // Rate limited
+        const data = await res.json()
+        setPwError(true)
+        setPwErrorMessage(data.error || "Too many attempts. Please try again later.")
+        setShakeKey((k) => k + 1)
+        setPassword("")
       } else {
         setPwError(true)
+        setPwErrorMessage("Incorrect password. Please try again.")
         setShakeKey((k) => k + 1)
         setPassword("")
       }
     } catch {
       setPwError(true)
+      setPwErrorMessage("Connection error. Please try again.")
       setShakeKey((k) => k + 1)
       setPassword("")
     } finally {
@@ -113,13 +173,26 @@ export default function DeckPage() {
 
   // Handle download - fetch with auth header and trigger download
   const handleDownload = async () => {
+    const token = getStoredToken()
+    if (!token) {
+      handleUnauthorized()
+      toast.error("Session expired. Please log in again.")
+      return
+    }
+
     try {
       const res = await fetch(PDF_API_ENDPOINT, {
         method: "GET",
         headers: {
-          "x-portfolio-auth": "unlocked",
+          Authorization: `Bearer ${token}`,
         },
       })
+
+      if (res.status === 401) {
+        handleUnauthorized()
+        toast.error("Session expired. Please log in again.")
+        return
+      }
 
       if (!res.ok) {
         toast.error("Failed to download. Please try again.")
@@ -193,7 +266,7 @@ export default function DeckPage() {
                     Note: The embed can't pass custom headers, so we use an iframe
                     with a blob URL instead for authenticated PDF viewing
                   */}
-                  <PdfViewer />
+                  <PdfViewer onUnauthorized={handleUnauthorized} />
                 </div>
                 <p className="text-sm text-muted-foreground mt-4 text-center">
                   If the PDF doesn&apos;t display, you can{" "}
@@ -238,6 +311,7 @@ export default function DeckPage() {
                         onChange={(e) => {
                           setPassword(e.target.value)
                           setPwError(false)
+                          setPwErrorMessage(null)
                         }}
                         placeholder="Enter password"
                         autoComplete="off"
@@ -260,15 +334,13 @@ export default function DeckPage() {
                         )}
                       </button>
                     </div>
-                    {pwError && (
+                    {pwError && pwErrorMessage && (
                       <p
                         id="password-error"
                         className="text-sm text-destructive"
                         role="alert"
                       >
-                        {!password.trim()
-                          ? "Please enter a password."
-                          : "Incorrect password. Please try again."}
+                        {pwErrorMessage}
                       </p>
                     )}
                   </div>
@@ -304,7 +376,7 @@ export default function DeckPage() {
 }
 
 // Separate component for PDF viewing that fetches and displays via blob URL
-function PdfViewer() {
+function PdfViewer({ onUnauthorized }: { onUnauthorized: () => void }) {
   const [blobUrl, setBlobUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -313,13 +385,24 @@ function PdfViewer() {
     let objectUrl: string | null = null
 
     const loadPdf = async () => {
+      const token = getStoredToken()
+      if (!token) {
+        onUnauthorized()
+        return
+      }
+
       try {
         const res = await fetch(PDF_API_ENDPOINT, {
           method: "GET",
           headers: {
-            "x-portfolio-auth": "unlocked",
+            Authorization: `Bearer ${token}`,
           },
         })
+
+        if (res.status === 401) {
+          onUnauthorized()
+          return
+        }
 
         if (!res.ok) {
           throw new Error("Failed to fetch PDF")
@@ -343,7 +426,7 @@ function PdfViewer() {
         URL.revokeObjectURL(objectUrl)
       }
     }
-  }, [])
+  }, [onUnauthorized])
 
   if (loading) {
     return (
