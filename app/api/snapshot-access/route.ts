@@ -17,12 +17,12 @@ export async function POST(request: Request) {
       // Production: read from Vercel Edge Config store
       const entries = await getAll<Record<string, string>>()
       passwordMap = entries ?? {}
-    } else if (process.env.SNAPSHOT_PASSWORDS) {
+    } else if (process.env.PORTFOLIO_PASSWORDS) {
       // Local dev fallback: parse JSON env var
       try {
-        passwordMap = JSON.parse(process.env.SNAPSHOT_PASSWORDS)
+        passwordMap = JSON.parse(process.env.PORTFOLIO_PASSWORDS)
       } catch {
-        console.error("[snapshot-access] Failed to parse SNAPSHOT_PASSWORDS env var")
+        console.error("[snapshot-access] Failed to parse PORTFOLIO_PASSWORDS env var")
         return NextResponse.json({ success: false }, { status: 500 })
       }
     }
