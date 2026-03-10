@@ -446,25 +446,25 @@ export default function HomePage() {
   const [isUnlocked, setIsUnlocked] = useState(false)
 
   useEffect(() => {
-    if (sessionStorage.getItem('snapshot_unlocked') === 'true') {
+    if (sessionStorage.getItem('portfolio_unlocked') === 'true') {
       setIsUnlocked(true)
     }
   }, [])
 
   const handleUnlock = () => {
     setIsUnlocked(true)
-    sessionStorage.setItem('snapshot_unlocked', 'true')
+    sessionStorage.setItem('portfolio_unlocked', 'true')
   }
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      (window as Window & { clearSnapshotAccess?: () => void }).clearSnapshotAccess = () => {
-        sessionStorage.removeItem('snapshot_unlocked')
+      (window as Window & { clearPortfolioAccess?: () => void }).clearPortfolioAccess = () => {
+        sessionStorage.removeItem('portfolio_unlocked')
         setIsUnlocked(false)
-        console.log('[dev] snapshot_unlocked cleared')
+        console.log('[dev] portfolio_unlocked cleared')
       }
       console.log(
-        '%c clearSnapshotAccess() %c reset snapshot session lock',
+        '%c clearPortfolioAccess() %c reset portfolio session lock',
         'background:#1a1a1a;color:#22d3ee;font-family:monospace;padding:2px 6px;border-radius:3px;border:1px solid #22d3ee',
         'color:#737373;font-family:monospace'
       )
