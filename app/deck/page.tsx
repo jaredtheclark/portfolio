@@ -39,6 +39,25 @@ export default function DeckPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [pdfReady, setPdfReady] = useState(false)
   const [pdfError, setPdfError] = useState(false)
+  const [cooldownSeconds, setCooldownSeconds] = useState(0)
+
+  // Countdown timer for rate limit cooldown
+  useEffect(() => {
+    if (cooldownSeconds <= 0) return
+
+    const timer = setInterval(() => {
+      setCooldownSeconds((prev) => {
+        if (prev <= 1) {
+          setPwError(false)
+          setPwErrorMessage(null)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [cooldownSeconds])
 
   // Handle 401 responses by clearing token and showing password form
   const handleUnauthorized = useCallback(() => {
@@ -143,10 +162,11 @@ export default function DeckPage() {
           setPassword("")
         }
       } else if (res.status === 429) {
-        // Rate limited
-        const data = await res.json()
+        // Rate limited - start cooldown timer
+        const retryAfter = parseInt(res.headers.get("Retry-After") || "60", 10)
+        setCooldownSeconds(retryAfter)
         setPwError(true)
-        setPwErrorMessage(data.error || "Too many attempts. Please try again later.")
+        setPwErrorMessage(`Too many attempts. Try again in ${retryAfter} seconds.`)
         setShakeKey((k) => k + 1)
         setPassword("")
       } else {
@@ -290,7 +310,7 @@ export default function DeckPage() {
                     Case Study Deck
                   </h1>
                   <p className="text-base text-muted-foreground">
-                    Enter your access password to view
+                    Enter the password to view this case study
                   </p>
                 </div>
 
@@ -315,16 +335,18 @@ export default function DeckPage() {
                         }}
                         placeholder="Enter password"
                         autoComplete="off"
+                        disabled={cooldownSeconds > 0}
                         aria-invalid={pwError}
                         aria-describedby={pwError ? "password-error" : undefined}
-                        className={`w-full h-10 rounded-lg border px-3 pr-10 text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-colors shadow-sm ${
+                        className={`w-full h-10 rounded-lg border px-3 pr-10 text-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed ${
                           pwError ? "border-destructive animate-shake" : "border-input"
                         }`}
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-muted/50 transition-colors"
+                        disabled={cooldownSeconds > 0}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-muted/50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         aria-label={showPassword ? "Hide password" : "Show password"}
                       >
                         {showPassword ? (
@@ -340,17 +362,25 @@ export default function DeckPage() {
                         className="text-sm text-destructive"
                         role="alert"
                       >
-                        {pwErrorMessage}
+                        {cooldownSeconds > 0
+                          ? `For security, try again in ${cooldownSeconds} second${cooldownSeconds !== 1 ? "s" : ""}.`
+                          : pwErrorMessage}
                       </p>
                     )}
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full"
-                    disabled={pwLoading || !password.trim()}
+                    className={`w-full ${cooldownSeconds > 0 ? "animate-caution-stripes" : ""}`}
+                    disabled={pwLoading || !password.trim() || cooldownSeconds > 0}
                   >
-                    {pwLoading ? "Verifying..." : "Unlock"}
+                    <span className="relative z-10">
+                      {cooldownSeconds > 0
+                        ? "Limit Reached — Try again soon"
+                        : pwLoading
+                          ? "Verifying..."
+                          : "View Presentation"}
+                    </span>
                   </Button>
                 </form>
 

@@ -18,11 +18,11 @@
   --muted-foreground: oklch(0.4625 0.0095 73.6478);
   --accent: oklch(0.9219 0 0);
   --accent-foreground: oklch(0.2868 0.0084 75.2489);
-  --destructive: oklch(0.5995 0.1865 357.7732);
+  --destructive: oklch(0.575 0.1658 23.94);
   --destructive-foreground: oklch(1.0000 0 0);
   --border: oklch(0.8687 0.0043 56.3660);
   --input: oklch(0.8687 0.0043 56.3660);
-  --ring: oklch(0.6611 0.1160 185.9407);
+  --ring: oklch(0.2130 0.0368 138.6013);
   --chart-1: oklch(0.6611 0.1160 185.9407);
   --chart-2: oklch(0.5995 0.1865 357.7732);
   --chart-3: oklch(0.4625 0.0095 73.6478);
@@ -30,12 +30,12 @@
   --chart-5: oklch(0.7717 0.0084 73.7245);
   --sidebar: oklch(0.2868 0.0084 75.2489);
   --sidebar-foreground: oklch(0.9551 0 0);
-  --sidebar-primary: oklch(0.6611 0.1160 185.9407);
+  --sidebar-primary: oklch(0.2130 0.0368 138.6013);
   --sidebar-primary-foreground: oklch(1.0000 0 0);
   --sidebar-accent: oklch(0.3776 0.0100 73.5967);
   --sidebar-accent-foreground: oklch(0.9551 0 0);
   --sidebar-border: oklch(0.3776 0.0100 73.5967);
-  --sidebar-ring: oklch(0.6611 0.1160 185.9407);
+  --sidebar-ring: oklch(0.2130 0.0368 138.6013);
   /* New semantic tokens */
   --label: oklch(0.5 0 0);
   --section-border: oklch(0.92 0.004 75);
@@ -356,6 +356,87 @@
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  /*
+   * Caution stripes animation for rate limit cooldown
+   *
+   * Seamless loop math:
+   * - Stripe period: 24px (12px stripe + 12px gap)
+   * - Stripe angle: 40° from horizontal (gradient at 130deg)
+   * - Horizontal period = period / cos(angle) for seamless loop
+   */
+  .animate-caution-stripes {
+    --stripe-period: 24px;
+    --stripe-angle: 40deg;
+    --h-period: calc(var(--stripe-period) / cos(var(--stripe-angle)));
+
+    position: relative;
+    overflow: hidden;
+    background: oklch(0.85 0.02 75) !important;
+    border-color: oklch(0.75 0.02 75) !important;
+    color: oklch(0.35 0.02 75) !important;
+  }
+
+  .animate-caution-stripes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(var(--h-period) * -1);
+    right: 0;
+    height: 100%;
+    background: repeating-linear-gradient(
+      calc(90deg + var(--stripe-angle)),
+      transparent 0px,
+      transparent 12px,
+      rgba(0, 0, 0, 0.07) 12px,
+      rgba(0, 0, 0, 0.07) 24px
+    );
+    animation: cautionStripes 3s linear infinite;
+  }
+
+  /* Gradient sweep: starts fully left, ends fully right */
+  .animate-caution-stripes::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.5) 40%,
+      rgba(255, 255, 255, 0.5) 60%,
+      transparent 100%
+    );
+    animation: cautionSweep 3s ease-out infinite;
+  }
+
+  .dark .animate-caution-stripes {
+    background: oklch(0.25 0.02 140) !important;
+    border-color: oklch(0.35 0.02 140) !important;
+    color: oklch(0.65 0.02 140) !important;
+  }
+
+  .dark .animate-caution-stripes::before {
+    background: repeating-linear-gradient(
+      calc(90deg + var(--stripe-angle)),
+      transparent 0px,
+      transparent 12px,
+      rgba(255, 255, 255, 0.05) 12px,
+      rgba(255, 255, 255, 0.05) 24px
+    );
+  }
+
+  .dark .animate-caution-stripes::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(255, 255, 255, 0.2) 60%,
+      transparent 100%
+    );
+  }
 }
 
 @keyframes shake {
@@ -419,5 +500,39 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+/*
+ * Seamless caution stripe animation:
+ * - Translate by exactly one horizontal period: period / sin(angle)
+ * - CSS custom properties evaluated at animation time
+ */
+@keyframes cautionStripes {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--h-period));
+  }
+}
+
+/*
+ * Gradient sweep:
+ * - Element is 40% width, starts at left: -40% (right edge at 0%)
+ * - Must end with left edge past 100% (fully off right)
+ * - Distance: 140% of parent = 350% of element width
+ * - Adding buffer to ensure fully off-screen before restart
+ */
+@keyframes cautionSweep {
+  0%,
+  50% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(400%);
+    opacity: 1;
   }
 }
