@@ -26,6 +26,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# storybook
+/storybook-static
+
 #docs and notes
 /docs/about-jared
 /docs/case-study-context
